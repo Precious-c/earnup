@@ -50,10 +50,10 @@ export function BottomNavbar() {
         {navItems.map((item) => {
           const isActive = location.pathname === item.to;
           return (
-            <li key={item.to}>
+            <li key={item.to} className="">
               <Link
                 to={item.to}
-                className={`inline-flex flex-col items-center justify-center h-full w-full px-5 group ${
+                className={`inline-flex flex-col items-center justify-center h-full w-full px-5 group hover:bg-[#797d862c] hover:text-white rounded-sm ${
                   isActive ? "text-primary" : "text-[#868a86]"
                 }`}
               >
