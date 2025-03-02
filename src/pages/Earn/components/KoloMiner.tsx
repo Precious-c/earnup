@@ -15,7 +15,7 @@ const KoloMiner = () => {
           <path d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       </div>
-      <button className="w-24 bg-white/20 hover:bg-white/30 text-white font-medium py-3 rounded-xl transition-colors">
+      <button className="w-32 bg-[#06752dd3] hover:bg-white/30 text-white font-medium py-2 rounded-xl transition-colors text-sm font-semibold">
         Start
       </button>
     </div>
