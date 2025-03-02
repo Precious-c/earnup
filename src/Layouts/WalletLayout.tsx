@@ -1,4 +1,4 @@
-import { BottomNavbar } from "@/components/BottomNavbar/BottomNavbar";
+import { BottomNavbar } from "@/components/BottomNavbar";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
