@@ -9,7 +9,7 @@ const StatusBanner = ({ days, message }: StatusBannerProps) => {
   return (
     <div
       className="rounded-full py-3 flex items-center justify-between
-     mb-8 gap-2 max-w-96"
+     mb-2 gap-2 max-w-96"
     >
       <div className="flex items-center">
         <div className="w-16 h-16 mr-2 min-w-15 flex items-center">

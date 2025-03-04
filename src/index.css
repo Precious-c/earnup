@@ -116,7 +116,7 @@
     @apply box-border;
   }
   body {
-    @apply bg-red-600 text-foreground;
+    @apply bg-main text-foreground;
     @apply font-sans;
   }
 }

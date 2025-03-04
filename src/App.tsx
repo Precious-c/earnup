@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { BottomNavbar } from "./components/BottomNavbar";
 import Wallet from "@/pages/Wallet/WalletPage";
+import Earn from "@/pages/Earn/EarnPage";
 
 // const Wallet = () => <div>Wallet Page</div>;
-const Earn = () => <div>Earn Page</div>;
+// const Earn = () => <div>Earn Page</div>;
 const Frens = () => <div>Frens Page</div>;
 const Profile = () => <div>Profile Page</div>;
 

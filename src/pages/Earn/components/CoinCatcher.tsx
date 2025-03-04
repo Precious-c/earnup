@@ -4,7 +4,7 @@ interface CoinCatcherProps {
 }
 const CoinCatcher = ({ balance }: CoinCatcherProps) => {
   return (
-    <div className="text-center mb-8">
+    <div className="text-center mb-2">
       <h1 className="text-white text-4xl font-bold mb-4">{balance}</h1>
       <div className="relative w-24 h-24 mx-auto mb-4">
         <div className="absolute inset-0 bg-[#4CD964] rounded-full opacity-20 animate-pulse"></div>
