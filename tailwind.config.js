@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Fixel Text", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -19,7 +20,9 @@ export default {
       colors: {
         main: "#101110",
         stroke: " #2d2f2d",
+        card1: "#2a2c2a71",
         "stroke-secondary": "#ffffff14",
+        "accent-green": "#14d65a",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

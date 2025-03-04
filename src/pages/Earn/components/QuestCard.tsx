@@ -1,5 +1,3 @@
-import koloCoin from "@/assets/images/kolocoin.png";
-
 interface QuestCardProps {
   index: number;
   icon: string;

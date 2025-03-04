@@ -1,7 +1,9 @@
 import CoinCatcher from "./components/CoinCatcher";
 import { Communities } from "./components/Communities";
 import KoloMiner from "./components/KoloMiner";
+import Preferences from "./components/Preferences";
 import { QuestsList } from "./components/QuestsList";
+import { Quiz } from "./components/Quiz";
 import StatusBanner from "./components/StatusBanner";
 
 const EarnPage = () => {
@@ -14,6 +16,8 @@ const EarnPage = () => {
         <Communities />
         {/* <QuestList quests={quests} /> */}
         <QuestsList />
+        <Quiz />
+        <Preferences />
       </main>
     </div>
   );
