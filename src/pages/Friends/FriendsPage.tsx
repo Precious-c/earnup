@@ -1,5 +1,5 @@
-import { BottomNavbar } from "@/components/BottomNavbar"
-import { Share2, Copy, Check, Users } from "lucide-react"
+
+import { Share2, Copy, Users } from "lucide-react"
 
 
 interface FrenStats {

@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react"
-import { BadgeCheck, ShieldEllipsis, Flag, Star, Languages, FileText, MessageCircle, ChevronRight, ExternalLink } from "lucide-react"
+import { BadgeCheck, ShieldEllipsis, Flag, Star, FileText, MessageCircle, ChevronRight, ExternalLink } from "lucide-react"
 
 export interface MenuItem {
   id: string

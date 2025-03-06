@@ -14,7 +14,7 @@ const EarnPage = () => {
 
   const handleQuizComplete = (score: number) => {
     setQuizScore(score)
-    console.log(`Quiz completed with score: ${score}/${quizQuestions.length}`)
+    console.log(`Quiz completed with score: ${quizScore}/${quizQuestions.length}`)
     
   }
   return (

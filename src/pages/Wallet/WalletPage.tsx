@@ -2,10 +2,9 @@ import OptionCard from "./components/OptionCard";
 import crypoCardsImg from "@/assets/images/card-type-1f39398b.png";
 import cryptoWalletImg from "@/assets/images/wallet-bg-7be46582.png";
 import tonWalletImg from "@/assets/images/web3-type-6249bc51.png";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import Currency from "@/utils/Currency";
+
 import { Balance } from "./components/Balance";
-import { QuickActions } from "./components/QuickActions";
+
 import { TransactionSummary } from "./components/TransactionSummary";
 import { ArrowDownLeft, ArrowUpRight, Clock } from "lucide-react";
 import { MembershipPlans } from "./components/MembershipPlans";

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { QuizQuestion } from "@/data"
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 import yellowKolo from "@/assets/images//kolo-yellow.png"
 
 interface QuizProps {
