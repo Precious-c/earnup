@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CoinCatcher from "./components/CoinCatcher";
 import { Communities } from "./components/Communities";
 import KoloMiner from "./components/KoloMiner";
@@ -5,8 +6,17 @@ import Preferences from "./components/Preferences";
 import { QuestsList } from "./components/QuestsList";
 import { Quiz } from "./components/Quiz";
 import StatusBanner from "./components/StatusBanner";
+import { quizQuestions } from "@/data"
+
 
 const EarnPage = () => {
+  const [quizScore, setQuizScore] = useState(0)
+
+  const handleQuizComplete = (score: number) => {
+    setQuizScore(score)
+    console.log(`Quiz completed with score: ${score}/${quizQuestions.length}`)
+    
+  }
   return (
     <div className="min-h-screen bg-main">
       <main className=" pt-4 pb-20 flex flex-col justify-center items-center gap-3">
@@ -16,7 +26,7 @@ const EarnPage = () => {
         <Communities />
         {/* <QuestList quests={quests} /> */}
         <QuestsList />
-        <Quiz />
+        <Quiz questions={quizQuestions} onComplete={handleQuizComplete} />
         <Preferences />
       </main>
     </div>

@@ -1,26 +1,30 @@
+import { Switch } from "@/components/ui/switch";
 import { ChevronRight, UserPen, Vibrate } from "lucide-react";
+import { useState } from "react";
 
 const Preferences = () => {
+  const [vibration, setVibration] = useState(true)
+ 
   return (
-    <div className="w-full flex flex-col gap-3">
-      <div className="w-full  flex justify-between items-center bg-card1 p-3 rounded-2xl">
-        <div className="flex items-center justify-center">
-          <UserPen className="mr-2" />
-          <p className="mt-1 font-poppins">Change nickname</p>
-        </div>
 
-        <ChevronRight />
+
+    <div className="space-y-3 mb-8 w-full">
+    <div className="bg-[#1C1C1E] rounded-xl p-4 flex items-center justify-between">
+      <div className="flex items-center">
+        <UserPen className="mr-4" />
+        <span className="text-white">Change nickname</span>
       </div>
-
-      <div className="w-full  flex justify-between items-center bg-card1 p-3 rounded-xl">
-        <div className="flex items-center justify-center">
-          <Vibrate className="mr-2" />
-          <p className="mt-1 font-poppins">Vibration</p>
-        </div>
-
-        <ChevronRight />
-      </div>
+      <ChevronRight />
     </div>
+
+    <div className="bg-[#1C1C1E] rounded-xl p-4 flex items-center justify-between">
+      <div className="flex items-center">
+        <Vibrate className="mr-4" />
+        <span className="text-white">Vibration</span>
+      </div>
+      <Switch onClick={() => setVibration(!vibration)}/>
+    </div>
+  </div>
   );
 };
 

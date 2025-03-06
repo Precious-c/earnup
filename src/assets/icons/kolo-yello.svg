@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 20 20" class="svg-icon svg-fill icon__up" style="width: 20px; height: 20px;">
+  <!-- Path with gradient fill and stroke -->
+  <path d="M.25 10C.25 4.615 4.615.25 10 .25s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S.25 15.385.25 10Z" 
+        fill="url(#svgiconid_quiz-icon_a_29_QzUzB)" 
+        stroke="url(#svgiconid_quiz-icon_b_29_QzUzB)" 
+        stroke-width=".5"></path>
+  
+  <!-- First Rectangle with rotation -->
+  <rect x="8.294" y="4.799" width="8" height="11" rx="2" 
+        transform="rotate(3 8.294 4.799)" 
+        stroke="url(#svgiconid_quiz-icon_c_29_QzUzB)" 
+        stroke-width="1.5"></rect>
+  
+  <!-- Second Rectangle with rotation -->
+  <rect x="2.945" y="4.951" width="8" height="11" rx="2" 
+        transform="rotate(-12 2.945 4.951)" 
+        fill="#FFCD35" stroke="#fff" stroke-width="1.5"></rect>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <!-- Gradient A -->
+    <linearGradient id="svgiconid_quiz-icon_a_29_QzUzB" x1="0" y1="23.5" x2="22" y2="-2" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6534"></stop>
+      <stop offset=".38" stop-color="#FFD234"></stop>
+      <stop offset=".49" stop-color="#FFD234"></stop>
+      <stop offset="1" stop-color="#FF6534"></stop>
+    </linearGradient>
+
+    <!-- Gradient B -->
+    <linearGradient id="svgiconid_quiz-icon_b_29_QzUzB" x1="0" y1="-1" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E5B267"></stop>
+      <stop offset="1" stop-color="#DA9738" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <!-- Gradient C -->
+    <linearGradient id="svgiconid_quiz-icon_c_29_QzUzB" x1="3.831" y1="11.242" x2="14.999" y2="14.162" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity="0"></stop>
+      <stop offset="1" stop-color="#fff"></stop>
+    </linearGradient>
+  </defs>
+</svg>

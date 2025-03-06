@@ -3,11 +3,7 @@ import { BottomNavbar } from "./components/BottomNavbar";
 import Wallet from "@/pages/Wallet/WalletPage";
 import Earn from "@/pages/Earn/EarnPage";
 import Friends from "@/pages/Friends/FriendsPage";
-
-// const Wallet = () => <div>Wallet Page</div>;
-// const Earn = () => <div>Earn Page</div>;
-// const Frens = () => <div>Frens Page</div>;
-const Profile = () => <div>Profile Page</div>;
+import Profile from "@/pages/Profile/ProfilePage";
 
 function App() {
   return (
