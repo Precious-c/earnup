@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowLeftRight, ArrowUp, ArrowUpToLine, RefreshCw } from "lucide-react"
+import { ArrowDown, ArrowLeftRight, ArrowUp } from "lucide-react"
 
 interface BalanceProps {
   amount: number
