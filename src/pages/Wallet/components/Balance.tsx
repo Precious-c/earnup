@@ -27,7 +27,7 @@ export function Balance({ amount, currency = "₦" }: BalanceProps) {
           <div className="w-12 h-12 rounded-full bg-[#1C1C1E] flex items-center justify-center mb-2 group-hover:bg-[#2C2C2E] transition-colors">
             <RefreshCw className="w-6 h-6 text-[#fff] transform transition-transform group-hover:scale-110" />
           </div>
-          <span className="text-sm font-medium text-gray-400">Convert</span>
+          <span className="text-sm font-medium text-gray-400">Withdraw</span>
         </button>
 
         <button className="group flex flex-col items-center">
