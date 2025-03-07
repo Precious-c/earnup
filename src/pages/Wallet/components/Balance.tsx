@@ -28,13 +28,13 @@ export function Balance({ amount, currency = "₦", isLoading = false }: Balance
       </motion.div>
 
       <div className="flex gap-3 justify-center mb-5 border-b pb-7 border-stroke-secondary ">
-        <button className="bg-[#1C1C1E] text-sm text-white px-6 w-40 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
+        <button className="bg-[#1C1C1E] font-semibold text-sm text-white px-5 w-35 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
           TOP UP
         </button>
-        <button className="bg-[#1C1C1E] text-sm text-white px-6 w-40 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
+        <button className="bg-[#1C1C1E] font-semibold text-sm text-white px-5 w-35 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
           WITHDRAW
         </button>
-        <button className="bg-[#1C1C1E] text-sm text-white px-6 w-40 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
+        <button className="bg-[#1C1C1E] font-semibold text-sm text-white px-5 w-35 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
           SEND
         </button>
       </div>
