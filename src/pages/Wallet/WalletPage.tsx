@@ -6,7 +6,7 @@ import tonWalletImg from "@/assets/images/web3-type-6249bc51.png";
 import { Balance } from "./components/Balance";
 
 import { TransactionSummary } from "./components/TransactionSummary";
-import { ArrowDownLeft, ArrowUpRight, Clock, Settings, Settings2 } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight, Clock, Settings2 } from "lucide-react";
 import { MembershipPlans } from "./components/MembershipPlans";
 
 const WalletPage = () => {
