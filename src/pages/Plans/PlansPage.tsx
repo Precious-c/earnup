@@ -1,30 +1,30 @@
 "use client"
 
 import { useParams, useNavigate } from "react-router-dom"
-import { ArrowLeft, Shield, Wallet, CreditCard, ArrowUpCircle, ShieldCheck } from "lucide-react"
+import { ArrowLeft, ShieldCheck } from "lucide-react"
 import { plansData } from "@/data"
 
 
-const paymentMethods = [
-  {
-    id: "crypto",
-    icon: <Wallet className="w-6 h-6" />,
-    title: "Pay with Crypto",
-    description: "Use your favorite cryptocurrency",
-  },
-  {
-    id: "card",
-    icon: <CreditCard className="w-6 h-6" />,
-    title: "Credit/Debit Card",
-    description: "Instant payment via card",
-  },
-  {
-    id: "bank",
-    icon: <ArrowUpCircle className="w-6 h-6" />,
-    title: "Bank Transfer",
-    description: "Direct bank transfer",
-  },
-]
+// const paymentMethods = [
+//   {
+//     id: "crypto",
+//     icon: <Wallet className="w-6 h-6" />,
+//     title: "Pay with Crypto",
+//     description: "Use your favorite cryptocurrency",
+//   },
+//   {
+//     id: "card",
+//     icon: <CreditCard className="w-6 h-6" />,
+//     title: "Credit/Debit Card",
+//     description: "Instant payment via card",
+//   },
+//   {
+//     id: "bank",
+//     icon: <ArrowUpCircle className="w-6 h-6" />,
+//     title: "Bank Transfer",
+//     description: "Direct bank transfer",
+//   },
+// ]
 
 const plansPage =()=> {
   const { planId } = useParams<{ planId: string }>()
