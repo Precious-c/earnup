@@ -14,7 +14,7 @@ import { Award, Crown, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export interface Plan {
+export interface Plan { 
     id: string
     name: string
     price: number
