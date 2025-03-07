@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export interface Plan { 
-    id: string
+    id: string 
     name: string
     price: number
     icon: React.ReactNode
