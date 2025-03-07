@@ -2,7 +2,9 @@ import catsImg from "@/assets/images/cats-logo.png";
 import rLogo from "@/assets/images/logo-1734290083.png";
 import youtubeImg from "@/assets/icons/youtube.svg";
 import telegramImg from "@/assets/icons/telegram.svg";
-
+import crypoCardsImg from "@/assets/images/card-type-1f39398b.png";
+import cryptoWalletImg from "@/assets/images/wallet-bg-7be46582.png";
+import tonWalletImg from "@/assets/images/web3-type-6249bc51.png";
 export const questsData = [
   {
     icon: telegramImg,
@@ -87,3 +89,47 @@ export const quizQuestions: QuizQuestion[] = [
   },
 ]
 
+export const plansData = {
+  basic: {
+    id: "basic",
+    name: "Basic Plan",
+    price: 1000,
+    description: "Get started with basic rewards and features",
+    color: "#4CD964",
+    image: cryptoWalletImg,
+    features: [
+      "Up to 10 standard tasks per day",
+      "Base rate for all tasks (1x multiplier)",
+      "5% fee on withdrawals",
+      "₦2,000 minimum withdrawal threshold",
+    ],
+  },
+  gold: {
+    id: "gold",
+    name: "Gold Plan",
+    price: 5000,
+    description: "Unlock premium features and weekly rewards",
+    color: "#FFD700",
+    image: crypoCardsImg,
+    features: [
+      "Up to 25 tasks per day, including premium tasks",
+      "1.5x earnings multiplier on all tasks",
+      "2% fee on withdrawals",
+      "₦1,000 minimum withdrawal threshold",
+    ],
+  },
+  diamond: {
+    id: "diamond",
+    name: "Diamond Plan",
+    price: 10000,
+    description: "Experience VIP treatment and priority support",
+    color: "#00BFFF",
+    image: tonWalletImg,
+    features: [
+      "Unlimited tasks per day, including VIP tasks",
+      "2x earnings multiplier on all tasks",
+      "No fees on withdrawals",
+      "No minimum withdrawal threshold",
+    ],
+  },
+}

@@ -28,6 +28,8 @@
     "cmdk": "1.0.0",
     "currency-symbol": "^1.0.6",
     "currency-symbol-map": "^5.1.0",
+    "dlx": "^0.2.1",
+    "embla-carousel-react": "^8.5.2",
     "framer-motion": "^11.13.1",
     "ldrs": "^1.0.2",
     "lucide-react": "^0.465.0",

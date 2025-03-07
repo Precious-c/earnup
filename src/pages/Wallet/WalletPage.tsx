@@ -1,13 +1,9 @@
-import OptionCard from "./components/OptionCard";
-import crypoCardsImg from "@/assets/images/card-type-1f39398b.png";
-import cryptoWalletImg from "@/assets/images/wallet-bg-7be46582.png";
-import tonWalletImg from "@/assets/images/web3-type-6249bc51.png";
 
 import { Balance } from "./components/Balance";
 
 import { TransactionSummary } from "./components/TransactionSummary";
 import { ArrowDownLeft, ArrowUpRight, Clock, Settings2 } from "lucide-react";
-import { MembershipPlans } from "./components/MembershipPlans";
+import { Plans } from "./components/Plans";
 
 const WalletPage = () => {
   const metrics = [
@@ -49,8 +45,10 @@ const WalletPage = () => {
         {/* Transaction Summary */}
         <TransactionSummary metrics={metrics} />
 
+        <Plans/>
+
         {/* Membership plans */}
-        <MembershipPlans/>
+        {/* <MembershipPlans/> */}
 
         {/* Recent Activity */}
         <div className="bg-[#1C1C1E] rounded-xl p-6">
@@ -59,7 +57,7 @@ const WalletPage = () => {
         </div>
       </main>
 
-      <div className="space-y-4">
+      {/* <div className="space-y-4">
         <OptionCard
           title="Crypto card"
           description="Pay anywhere with your beloved crypto asset"
@@ -79,7 +77,7 @@ const WalletPage = () => {
           image={tonWalletImg}
           comingSoon
         />
-      </div>
+      </div> */}
     </div>
   );
 };
