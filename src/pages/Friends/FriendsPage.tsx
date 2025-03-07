@@ -97,14 +97,14 @@ const FriendsPage = () => {
           <div className="flex gap-4">
             <button
               onClick={handleShareInvite}
-              className="flex-1 flex items-center justify-center gap-2 bg-primary text-background rounded-xl py-3 hover:bg-secondary transition-colors font-[550]"
+              className="flex-1 flex items-center justify-center gap-2 bg-primary text-[15px] text-background rounded-xl py-3 px-3 hover:bg-secondary transition-colors font-[550]"
             >
               <Share2 className="w-4 h-4" />
               Share invite link
             </button>
             <button
               onClick={handleCopyInvite}
-              className="flex-1 flex items-center justify-center gap-2 bg-[#2C2C2E] rounded-xl py-3 hover:bg-[#3C3C3E] transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 bg-[#2C2C2E] text-[15px] rounded-xl py-3 px-3 hover:bg-[#3C3C3E] transition-colors"
             >
               <Copy className="w-4 h-4" />
               Copy invite link

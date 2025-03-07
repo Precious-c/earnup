@@ -11,7 +11,7 @@ export function ProfileMenuItem({ icon: Icon, label, endIcon: EndIcon, onClick }
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center px-4 py-4 hover:bg-[#1C1C1E] transition-colors rounded-lg group"
+      className="w-full flex items-center px-3 py-4 hover:bg-[#1C1C1E] transition-colors rounded-lg group"
     >
       <Icon className="w-7 h-7 p-[5px] rounded-sm text-white mr-3 bg-[#33313185] " />
       <span className="flex-1 text-left text-white">{label}</span>

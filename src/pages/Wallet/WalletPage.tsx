@@ -29,7 +29,7 @@ const WalletPage = () => {
   ]
   return (
     <div className="py-3 pb-20  ">
-      <div className="text-center mb-5 mt-8">
+      <div className="text-center mb-6 mt-8">
         <h1 className="text-2xl font-semibold text-white ">Welcome to Muna Wallet</h1>
         {/* <p className="text-secondary text-sm font-normal break-words">Pick your option</p> */}
       </div>
