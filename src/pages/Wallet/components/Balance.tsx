@@ -1,45 +1,42 @@
-"use client"
-
-import { motion } from "framer-motion"
+import { ArrowDown, ArrowUp, RefreshCw } from "lucide-react"
 
 interface BalanceProps {
   amount: number
   currency?: string
-  isLoading?: boolean
 }
 
-export function Balance({ amount, currency = "₦", isLoading = false }: BalanceProps) {
+export function Balance({ amount, currency = "₦" }: BalanceProps) {
   return (
-    <div className="text-center mb-10">
-      <h2 className="text-gray-400 mb-2">My Balance</h2>
-      <motion.div
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        className="text-4xl md:text-5xl font-bold mb-8"
-      >
-        {isLoading ? (
-          <div className="h-12 w-32 bg-gray-800 rounded animate-pulse mx-auto" />
-        ) : (
-          <span>
-            {currency}
-            {amount.toFixed(2)}
-          </span>
-        )}
-      </motion.div>
-
-      <div className="flex gap-3 justify-center mb-5 border-b pb-7 border-stroke-secondary ">
-        <button className="bg-[#1C1C1E] font-semibold text-sm text-white px-5 w-35 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
-          TOP UP
-        </button>
-        <button className="bg-[#1C1C1E] font-semibold text-sm text-white px-5 w-35 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
-          WITHDRAW
-        </button>
-        <button className="bg-[#1C1C1E] font-semibold text-sm text-white px-5 w-35 py-5 rounded-xl hover:bg-[#2C2C2E] transition-colors">
-          SEND
-        </button>
+    <div className="text-center mb-8 pt-4">
+      {/* Balance Display */}
+      <div className="text-5xl font-bold mb-8 flex justify-center">
+        <p className="mr-2">{amount}</p> 
+        {currency}
       </div>
 
-      {/* <button className="text-[#4CD964] text-sm hover:underline">...</button> */}
+      {/* Action Buttons */}
+      <div className="grid grid-cols-3 gap-8 max-w-xs mx-auto">
+        <button className="group flex flex-col items-center">
+          <div className="w-12 h-12 rounded-full bg-[#1C1C1E] flex items-center justify-center mb-2 group-hover:bg-[#2C2C2E] transition-colors">
+            <ArrowDown className="w-6 h-6 text-[#fff] transform transition-transform group-hover:scale-110" />
+          </div>
+          <span className="text-sm text-gray-400">Top Up</span>
+        </button>
+
+        <button className="group flex flex-col items-center">
+          <div className="w-12 h-12 rounded-full bg-[#1C1C1E] flex items-center justify-center mb-2 group-hover:bg-[#2C2C2E] transition-colors">
+            <RefreshCw className="w-6 h-6 text-[#fff] transform transition-transform group-hover:scale-110" />
+          </div>
+          <span className="text-sm text-gray-400">Convert</span>
+        </button>
+
+        <button className="group flex flex-col items-center">
+          <div className="w-12 h-12 rounded-full bg-[#1C1C1E] flex items-center justify-center mb-2 group-hover:bg-[#2C2C2E] transition-colors">
+            <ArrowUp className="w-6 h-6 text-[#fff] transform transition-transform group-hover:scale-110" />
+          </div>
+          <span className="text-sm text-gray-400">Send</span>
+        </button>
+      </div>
     </div>
   )
 }

@@ -20,7 +20,7 @@ const EarnPage = () => {
   return (
     <div className="min-h-screen bg-main">
       <main className=" pt-4 pb-20 flex flex-col justify-center items-center gap-3">
-        <StatusBanner days={238} message="I've been waiting for my Kolo card" />
+        <StatusBanner days={238} message="I've been waiting for my Muna card" />
         <CoinCatcher balance={10250} />
         <KoloMiner />
         <Communities />

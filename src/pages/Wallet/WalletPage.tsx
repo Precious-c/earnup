@@ -6,7 +6,7 @@ import tonWalletImg from "@/assets/images/web3-type-6249bc51.png";
 import { Balance } from "./components/Balance";
 
 import { TransactionSummary } from "./components/TransactionSummary";
-import { ArrowDownLeft, ArrowUpRight, Clock } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight, Clock, Settings, Settings2 } from "lucide-react";
 import { MembershipPlans } from "./components/MembershipPlans";
 
 const WalletPage = () => {
@@ -29,10 +29,15 @@ const WalletPage = () => {
   ]
   return (
     <div className="py-3 pb-20  ">
-      <div className="text-center mb-6 mt-8">
-        <h1 className="text-2xl font-semibold text-white ">Welcome to Muna Wallet</h1>
-        {/* <p className="text-secondary text-sm font-normal break-words">Pick your option</p> */}
+      <div className="flex items-center justify-between px-4 py-3">
+        <div className="flex items-center">
+          <h1 className="text-xl font-medium text-white">Wallet</h1>
+        </div>
+        <button className="p-2 text-white hover:bg-[#1C1C1E] rounded-full transition-colors">
+          <Settings2 className="w-6 h-6" />
+        </button>
       </div>
+
 
       <main className="px-2 pt-2 pb-20">
         {/* Main Balance */}
