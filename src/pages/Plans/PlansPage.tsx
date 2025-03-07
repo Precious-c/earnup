@@ -1,7 +1,7 @@
 "use client"
 
 import { useParams, useNavigate } from "react-router-dom"
-import { ArrowLeft, Shield, Wallet, CreditCard, ArrowUpCircle } from "lucide-react"
+import { ArrowLeft, Shield, Wallet, CreditCard, ArrowUpCircle, ShieldCheck } from "lucide-react"
 import { plansData } from "@/data"
 
 
@@ -54,17 +54,19 @@ const plansPage =()=> {
         </div>
 
         {/* Features */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-4 mb-36">
           {plan.features.map((feature, index) => (
-            <div key={index} className="flex items-center bg-[#1C1C1E] rounded-lg p-4">
-              <Shield className="w-5 h-5 mr-3 text-gray-400" />
-              <span className="text-gray-200">{feature}</span>
+            <div key={index} className="flex items-center rounded-lg p-1">
+              <div className="bg-stroke-secondary rounded-lg p-3 mr-4 flex items-center justify-center">
+                <ShieldCheck className="w-7 h-7" strokeWidth={2} />
+              </div>
+              <span className="text-[17px] tracking-wide text-gray-200">{feature}</span>
             </div>
           ))}
         </div>
 
         {/* Payment Methods */}
-        <div className="space-y-4 mb-8">
+        {/* <div className="space-y-4 mb-8">
           {paymentMethods.map((method) => (
             <button
               key={method.id}
@@ -77,17 +79,17 @@ const plansPage =()=> {
               </div>
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Price and Action */}
-        <div className="fixed bottom-0 left-0 right-0 bg-black p-4 border-t border-gray-800">
+        <div className="fixed bottom-16 left-0 right-0 bg-black p-4 border-t border-gray-800 ">
           <div className="flex items-center justify-between mb-4">
             <div className="text-gray-400">Total amount</div>
             <div className="text-xl font-bold">₦{plan.price.toLocaleString()}</div>
           </div>
           <button
-            className="w-full py-4 rounded-lg font-medium text-black transition-colors"
-            style={{ backgroundColor: plan.color }}
+            className="w-full py-4 rounded-lg font-medium transition-colors text-lg bg-accent-green flex items-center justify-center"
+            // style={{ backgroundColor: plan. }}
           >
             Continue
           </button>
