@@ -1,7 +1,6 @@
 import { Balance } from "./components/Balance";
 import { TransactionSummary } from "./components/TransactionSummary";
 import { ArrowDownLeft, ArrowUpRight, Clock, Settings2 } from "lucide-react";
-import { Plans } from "./components/Plans";
 import PlansWidget from "./components/PlansWidget";
 
 const WalletPage = () => {
@@ -45,11 +44,7 @@ const WalletPage = () => {
         <TransactionSummary metrics={metrics} />
 
         <PlansWidget/>
-        <Plans/>
-
-        {/* Membership plans */}
-        {/* <MembershipPlans/> */}
-
+       
         {/* Recent Activity */}
         <div className="bg-[#1C1C1E] rounded-xl p-6">
           <h3 className="text-white mb-4">Recent Activity</h3>
@@ -57,27 +52,6 @@ const WalletPage = () => {
         </div>
       </main>
 
-      {/* <div className="space-y-4">
-        <OptionCard
-          title="Crypto card"
-          description="Pay anywhere with your beloved crypto asset"
-          image={crypoCardsImg}
-          comingSoon
-        />
-
-        <OptionCard
-          title="Crypto wallet"
-          description="Store, buy, sell, and send crypto on the go"
-          image={cryptoWalletImg}
-        />
-
-        <OptionCard
-          title="TON Wallet"
-          description="Fast, secure, and fully yours on TON"
-          image={tonWalletImg}
-          comingSoon
-        />
-      </div> */}
     </div>
   );
 };
