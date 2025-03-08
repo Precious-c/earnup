@@ -15,7 +15,7 @@ function App() {
           <Route path="/earn" element={<Earn />} />
           <Route path="/frens" element={<Friends />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/plans/:planId" element={<PlansPage />} />
+          <Route path="/plans/" element={<PlansPage />} />
           <Route path="/" element={<Navigate to="/wallet" replace />} />
         </Routes>
         <BottomNavbar />

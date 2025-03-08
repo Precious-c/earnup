@@ -1,9 +1,8 @@
-
 import { Balance } from "./components/Balance";
-
 import { TransactionSummary } from "./components/TransactionSummary";
 import { ArrowDownLeft, ArrowUpRight, Clock, Settings2 } from "lucide-react";
 import { Plans } from "./components/Plans";
+import PlansWidget from "./components/PlansWidget";
 
 const WalletPage = () => {
   const metrics = [
@@ -45,6 +44,7 @@ const WalletPage = () => {
         {/* Transaction Summary */}
         <TransactionSummary metrics={metrics} />
 
+        <PlansWidget/>
         <Plans/>
 
         {/* Membership plans */}
