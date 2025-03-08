@@ -8,7 +8,8 @@ import {
 import {  useNavigate } from "react-router-dom"
 import { ArrowLeft, ShieldCheck } from "lucide-react"
 import { plansDataArray } from "@/data"
-import { SyntheticEvent, useState } from "react"
+import { useEffect, useState } from "react"
+import { type CarouselApi } from "@/components/ui/carousel"
 
 
 // const paymentMethods = [
@@ -34,18 +35,34 @@ import { SyntheticEvent, useState } from "react"
 
 const plansPage =()=> {
   const navigate = useNavigate()
-  const [currentPlan, setCurrentPlan] = useState(plansDataArray[0])
-  const [currentPlanPrice, setCurrentPlanPrice] = useState(plansDataArray[0].price)
-   
-  
-  // Update current plan when carousel changes
-   const handleCarouselChange = (selectedElement: SyntheticEvent<HTMLDivElement, Event>) => {
-    alert("Carousel changed")
-    console.log(selectedElement.target)
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-    // const index = (selectedElement.target as any)?.selectedIndex || 0
-    // setCurrentPlan(plansDataArray[index >= 0 && index < plansDataArray.length ? index : 0])
+  // Make sure we always have a valid current plan
+  const currentPlan = plansDataArray[currentIndex] || plansDataArray[0]
+
+useEffect(() => {
+  if (!api) return;
+  
+  // Set initial index
+  setCurrentIndex(api.selectedScrollSnap())
+  
+  // Create the select handler
+  const onSelect = () => {
+    const selectedIndex = api.selectedScrollSnap()
+    console.log('Carousel changed to index:', selectedIndex)
+    setCurrentIndex(selectedIndex)
   }
+  
+  // Subscribe to select event
+  api.on("select", onSelect)
+  
+   // Cleanup function to unsubscribe from the event
+   return () => {
+    api.off("select", onSelect);
+  };
+}, [api])
+
 
   if (plansDataArray.length == 0) {
     return null
@@ -58,10 +75,11 @@ const plansPage =()=> {
       </button>
 
       <main className="pt-4">
-        <Carousel className="w-full" onSelect={(selectedElement) => console.log(selectedElement)}>
+        <Carousel className="w-full" setApi={setApi}>
           <CarouselContent>
             {plansDataArray.map((plan) => (
               <CarouselItem key={plan.id} >
+                
                 <div className="mb-8 ">
                   <div className="flex flex-col pl-7 pt-4 px-4 py-3 bg-stroke-secondary rounded-3xl">
                     <h1 className="text-2xl font-medium mb-2 mt-2">{plan.name}</h1>
@@ -115,7 +133,7 @@ const plansPage =()=> {
       <div className="fixed bottom-0 left-0 right-0 bg-black p-4 border-t border-gray-800 z-50 w-full mb-[60px]">
         <div className="flex items-center justify-between mb-4 max-w-screen-xl mx-auto">
           <div className="text-gray-400">Total amount</div>
-          <div className="text-xl font-bold">₦{currentPlanPrice}</div>
+          <div className="text-xl font-bold">₦{currentPlan?.price}</div>
         </div>
         <button
           className="w-full max-w-screen-xl mx-auto py-4 rounded-lg font-medium transition-colors text-lg bg-accent-green flex items-center justify-center"
