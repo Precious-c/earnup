@@ -48,14 +48,14 @@ const TaskDetailPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="min-h-screen  text-white flex items-center justify-center">
         <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-[#4CD964]" />
       </div>
     )
   }
 
   if (!task) {
-    return <div className="min-h-screen bg-black text-white flex items-center justify-center">Task not found</div>
+    return <div className="min-h-screen text-white flex items-center justify-center">Task not found</div>
   }
 
   return (
