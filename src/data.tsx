@@ -1,32 +1,277 @@
 import catsImg from "@/assets/images/cats-logo.png";
 import rLogo from "@/assets/images/logo-1734290083.png";
-import youtubeImg from "@/assets/icons/youtube.svg";
-import telegramImg from "@/assets/icons/telegram.svg";
+// import youtubeImg from "@/assets/icons/youtube.svg";
+// import telegramImg from "@/assets/icons/telegram.svg";
 import crypoCardsImg from "@/assets/images/card-type-1f39398b.png";
 import cryptoWalletImg from "@/assets/images/wallet-bg-7be46582.png";
 import tonWalletImg from "@/assets/images/web3-type-6249bc51.png";
-export const questsData = [
+import checkinIcon from "@/assets/icons/daily-24.png";
+import referIcon from   "@/assets/icons/add-user-26.png";
+
+
+import { Task } from "./types";
+
+
+export const tasksData: Task[] = [
   {
-    icon: telegramImg,
-    title: "Boost Kolo Channel",
-    points: 15000,
+    id: "boost-Muna-Wallet-channel",
+    title: "Boost Muna Wallet Channel",
+    description: "Boost the Muna Wallet Telegram channel to earn rewards",
+    icon: "telegram",
+    totalPoints: 15000,
+    type: "single",
+    status: "pending",
+    backgroundPattern: "coins",
   },
   {
-    icon: catsImg,
+    id: "cats-quest",
     title: "CATS Quest",
-    points: 13500,
+    description: "Complete quest to qualify for the $CATS drop!",
+    icon: catsImg,
+    totalPoints: 13500,
+    type: "multi",
+    status: "pending",
+    backgroundPattern: "coins",
+    subTasks: [
+      {
+        id: "follow-cats-telegram",
+        title: "Follow CATS on Telegram",
+        points: 4500,
+        type: "telegram_follow",
+        status: "pending",
+        link: "https://t.me/cats",
+      },
+      {
+        id: "follow-Muna-Wallet-telegram",
+        title: "Follow Muna Wallet on Telegram",
+        points: 4500,
+        type: "telegram_follow",
+        status: "pending",
+        link: "https://t.me/munawallet",
+      },
+      {
+        id: "retweet-cats-drop",
+        title: "ReTweet $CATS Drop",
+        points: 4500,
+        type: "twitter_retweet",
+        status: "pending",
+        link: "https://twitter.com/cats/status/123",
+      },
+    ],
   },
   {
-    icon: rLogo,
+    id: "ton-dex-quest",
     title: "Join new DEX on TON",
-    points: 9000,
+    description: "Complete tasks to earn rewards on the new TON DEX",
+    icon: rLogo,
+    totalPoints: 9000,
+    type: "multi",
+    status: "pending",
+    backgroundPattern: "coins",
+    subTasks: [
+      {
+        id: "join-ton-community",
+        title: "Join TON Community",
+        points: 3000,
+        type: "telegram_follow",
+        status: "pending",
+        link: "https://t.me/toncommunity",
+      },
+      {
+        id: "connect-wallet",
+        title: "Connect Wallet to DEX",
+        points: 3000,
+        type: "other",
+        status: "pending",
+        link: "https://ton-dex.app",
+      },
+      {
+        id: "make-swap",
+        title: "Make your first swap",
+        points: 3000,
+        type: "other",
+        status: "pending",
+        link: "https://ton-dex.app/swap",
+      },
+    ],
   },
   {
-    icon: youtubeImg,
-    title: "Watch Kolo Podcast №1",
-    points: 7500,
+    id: "muna-wallet-podcast",
+    title: "Watch Muna Wallet Podcast №1",
+    description: "Watch the first episode of the Muna Wallet podcast",
+    icon: "youtube",
+    totalPoints: 7500,
+    type: "single",
+    link: "https://youtube.com/munawallet/podcast/1",
+    status: "pending",
+    backgroundPattern: "coins",
   },
-];
+  {
+    id: "refer-friends",
+    title: "Invite Friends to Muna Wallet",
+    description: "Invite your friends to join Muna Wallet and earn rewards for each signup",
+    icon: referIcon,
+    totalPoints: 20000,
+    type: "multi",
+    status: "pending",
+    backgroundPattern: "coins",
+    subTasks: [
+      {
+        id: "share-invite-link",
+        title: "Share your invite link",
+        points: 5000,
+        type: "other",
+        status: "pending",
+        link: "https://munawallet.app/invite",
+      },
+      {
+        id: "first-friend-signup",
+        title: "First friend signs up",
+        points: 7500,
+        type: "other",
+        status: "pending",
+      },
+      {
+        id: "three-friends-signup",
+        title: "Three friends sign up",
+        points: 7500,
+        type: "other",
+        status: "pending",
+      },
+    ],
+  },
+  {
+    id: "daily-streak",
+    title: "Daily Login Streak",
+    description: "Log in daily to build your streak and earn increasing rewards",
+    icon: checkinIcon,
+    totalPoints: 12000,
+    type: "multi",
+    status: "pending",
+    backgroundPattern: "coins",
+    subTasks: [
+      {
+        id: "login-3-days",
+        title: "Login for 3 consecutive days",
+        points: 3000,
+        type: "other",
+        status: "pending",
+      },
+      {
+        id: "login-7-days",
+        title: "Login for 7 consecutive days",
+        points: 4000,
+        type: "other",
+        status: "pending",
+      },
+      {
+        id: "login-14-days",
+        title: "Login for 14 consecutive days",
+        points: 5000,
+        type: "other",
+        status: "pending",
+      },
+    ],
+  },
+  {
+    id: "crypto-basics",
+    title: "Learn Crypto Basics",
+    description: "Complete the crypto basics course to earn rewards",
+    icon: "youtube",
+    totalPoints: 10000,
+    type: "multi",
+    status: "pending",
+    backgroundPattern: "coins",
+    subTasks: [
+      {
+        id: "blockchain-101",
+        title: "Complete Blockchain 101",
+        points: 2500,
+        type: "other",
+        status: "pending",
+        link: "https://munawallet.app/learn/blockchain",
+      },
+      {
+        id: "crypto-wallets",
+        title: "Learn about Crypto Wallets",
+        points: 2500,
+        type: "other",
+        status: "pending",
+        link: "https://munawallet.app/learn/wallets",
+      },
+      {
+        id: "defi-basics",
+        title: "DeFi Fundamentals",
+        points: 2500,
+        type: "other",
+        status: "pending",
+        link: "https://munawallet.app/learn/defi",
+      },
+      {
+        id: "crypto-security",
+        title: "Crypto Security Best Practices",
+        points: 2500,
+        type: "other",
+        status: "pending",
+        link: "https://munawallet.app/learn/security",
+      },
+    ],
+  },
+  {
+    id: "twitter-engagement",
+    title: "Twitter Engagement",
+    description: "Engage with Muna Wallet on Twitter to earn rewards",
+    icon: "x",
+    totalPoints: 8500,
+    type: "multi",
+    status: "pending",
+    backgroundPattern: "coins",
+    subTasks: [
+      {
+        id: "follow-muna-wallet-twitter",
+        title: "Follow Muna Wallet on Twitter",
+        points: 2000,
+        type: "twitter_retweet",
+        status: "pending",
+        link: "https://twitter.com/munawallet",
+      },
+      {
+        id: "retweet-announcement",
+        title: "Retweet our latest announcement",
+        points: 3000,
+        type: "twitter_retweet",
+        status: "pending",
+        link: "https://twitter.com/munawallet/status/latest",
+      },
+      {
+        id: "tweet-with-hashtag",
+        title: "Tweet with #MunaWalletRewards hashtag",
+        points: 3500,
+        type: "twitter_retweet",
+        status: "pending",
+        link: "https://twitter.com/intent/tweet?text=I%27m%20earning%20rewards%20with%20%23MunaWalletRewards",
+      },
+    ],
+  },
+  {
+    id: "first-transaction",
+    title: "Complete Your First Transaction",
+    description: "Make your first transaction using Muna Wallet wallet",
+    icon: "telegram",
+    totalPoints: 15000,
+    type: "single",
+    link: "https://ton-keeper/wallet",
+    status: "pending",
+    backgroundPattern: "coins",
+  },
+]
+
+// // Function to get a task by ID
+export function getTaskById(taskId: string | undefined): Task | undefined {
+  return tasksData.find((task) => task.id === taskId)
+}
+
+
 
 
 export interface QuizQuestion {

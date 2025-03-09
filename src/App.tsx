@@ -5,6 +5,7 @@ import Earn from "@/pages/Earn/EarnPage";
 import Friends from "@/pages/Friends/FriendsPage";
 import Profile from "@/pages/Profile/ProfilePage";
 import PlansPage from "./pages/Plans/PlansPage";
+import TaskDetailPage from "./pages/Task/TaskDetailPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/frens" element={<Friends />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/plans/" element={<PlansPage />} />
+          <Route path="/tasks/:taskId" element={<TaskDetailPage />} />
           <Route path="/" element={<Navigate to="/wallet" replace />} />
         </Routes>
         <BottomNavbar />

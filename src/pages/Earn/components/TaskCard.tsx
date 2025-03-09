@@ -1,15 +1,27 @@
-interface QuestCardProps {
+import { useNavigate } from "react-router-dom";
+import { TaskIcon } from "@/pages/Task/components/TaskIcon";
+
+interface TaskCardProps {
   index: number;
   icon: string;
   title: string;
   points: number;
+  id: string;
+  status: "pending" | "completed" | "failed";
 }
-const QuestCard = ({ index, icon, title, points }: QuestCardProps) => {
+const TaskCard = ({ index, icon, title, points, id, status }: TaskCardProps) => {
+  const navigate = useNavigate()
+
+  const handleTaskClick = () => {
+    navigate(`/tasks/${id}`);
+  }
+
   return (
-    <div className="space-y-3 cursor-pointer">
+    <div className={`space-y-3 ${status === "completed" ? "cursor-not-allowed" : "cursor-pointer "}`} onClick={handleTaskClick}>
       <div key={index} className="bg-[#1C1C1E] rounded-xl p-4 flex items-center justify-between">
         <div className="flex items-center">
-          <img src={icon || "/placeholder.svg"} alt="" className="w-10 h-10 rounded-full mr-3" />
+        <TaskIcon icon={icon} size="sm" className=" w-10 h-10 rounded-full mr-3" />
+          {/* <img src={icon || taskIConPlaceholder} alt="" className="w-10 h-10 rounded-full mr-3" /> */}
           <div>
             <h3 className="text-white font-medium">{title}</h3>
             <div className="flex items-center bg-main w-fit px-2 rounded-full">
@@ -131,4 +143,4 @@ const QuestCard = ({ index, icon, title, points }: QuestCardProps) => {
   );
 };
 
-export default QuestCard;
+export default TaskCard;

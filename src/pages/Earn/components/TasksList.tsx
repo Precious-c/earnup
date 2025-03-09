@@ -1,9 +1,9 @@
 import koloIcon from "@/assets/images/kolocoin.png";
-import QuestCard from "./QuestCard";
+import TaskCard from "./TaskCard";
 import { ChevronRight } from "lucide-react";
-import { questsData } from "@/data";
+import {tasksData } from "@/data";
 
-export const QuestsList = () => {
+export const TasksList = () => {
   return (
     <div className="w-full flex flex-col max-w-[556px] mb-3">
       <div className="flex mb-3 justify-between w-full">
@@ -18,9 +18,10 @@ export const QuestsList = () => {
       </div>
 
       <div className="max-w-full flex flex-col gap-3 overflow-x-scroll overflow-y-hidden">
-        {questsData.map((quest, index) => {
+        {tasksData.map((task, index) => {
+          if(task.status === "pending" || task.status === "failed")
           return (
-            <QuestCard index={index} icon={quest.icon} title={quest.title} points={quest.points} />
+            <TaskCard key={task.id} index={index} icon={task.icon} title={task.title} points={task.totalPoints} id={task.id} status={task.status}/>
           );
         })}
       </div>
