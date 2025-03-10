@@ -59,13 +59,13 @@ const TaskDetailPage = () => {
   }
 
   return (
-    <div className="min-h-screen text-white w-full flex flex-col ">
+    <div className="min-h-screen text-white w-full flex flex-col pb-28">
       <button onClick={() => navigate(-1)} className="p-2 -ml-2 hover:bg-[#1C1C1E] rounded-full transition-colors mt-2 relative z-20">
         <ArrowLeft className="w-6 h-6 text-white" />
       </button>
 
       {/* Task Header */}
-      <div className="relative pb-8 ">
+      <div className="relative pb-24 ">
         <div className="absolute w-[100%] -top-11 h-60 bg-no-repeat bg-center bg-cover" 
           style={{backgroundImage: `url(${coinsPatternBg })`}} />
 
@@ -84,8 +84,8 @@ const TaskDetailPage = () => {
 
       {/* Sub Tasks */}
       {task.type === "multi" && task.subTasks && (
-        <div className="px-4">
-          <div className="bg-[#1C1C1E] rounded-xl overflow-hidden">
+        <div className=" mt-2 " >
+          <div className=" rounded-xl overflow-hidden">
             {task.subTasks.map((subTask) => (
               <SubTaskItem key={subTask.id} subTask={subTask} onOpen={handleSubTaskOpen} onCheck={handleSubTaskCheck} />
             ))}
