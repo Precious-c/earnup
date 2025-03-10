@@ -100,7 +100,7 @@ export function TopUpPage() {
                 <div className=" rounded-xl py-4 mb-1">
                   <div className="text-sm text-gray-400 mb-1 ">Send {selectedOption.symbol} to this address:</div>
                   <div className="flex items-center justify-between  rounded-lg ">
-                    <div className="text-sm mr-2 break-all tracking-widest font-medium">{selectedOption.address}</div>
+                    <div className="text-sm mr-2 break-all tracking-wide font-medium">{selectedOption.address}</div>
                     <button
                       onClick={() => handleCopy(selectedOption.address!)}
                       className="p-2 hover:bg-[#3C3C3E] rounded-lg transition-colors "
