@@ -49,7 +49,7 @@ export function TopUpPage() {
             {topUpOptions.map((option) => (
               <button
                 key={option.id}
-                className="w-full flex items-center px-3 py-[6px] hover:bg-[#1C1C1E] rounded-xl transition-colors mb-1"
+                className="w-full flex items-center pl-1 py-[6px] hover:bg-[#1C1C1E] rounded-xl transition-colors mb-1"
                 onClick={() => setSelectedOption(option)}
               >
                 <img
