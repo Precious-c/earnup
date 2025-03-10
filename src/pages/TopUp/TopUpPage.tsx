@@ -9,11 +9,13 @@ import qrCode from '@/assets/images/QR_code.png';
 
 export function TopUpPage() {
   const [selectedOption, setSelectedOption] = useState<TopUpOption | null>(null)
+  const [starsAmount, setStarsAmount] = useState<string | null>(null)
 
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text)
     toast.success('Copied');
+    starsAmount
   }
 
   return (
@@ -94,6 +96,23 @@ export function TopUpPage() {
               </div>
             </div>
 
+            {selectedOption.id === "stars" && 
+            <div>
+                <label htmlFor="amount" className="mb-1 block">Amount</label>
+                <input
+                  id="amount"
+                  type="number"
+                  placeholder="Search cryptocurrency"
+                  // value={"searchQuery"}
+                  onChange={(e) => setStarsAmount(e.target.value)}
+                  className="block w-full p-2 pr-3 py-2 bg-[#1C1C1E] border-none rounded-xl focus:ring-0 focus:outline-none text-white placeholder-gray-500"
+                />
+
+                <button className="w-full bg-white text-black text-lg p-3 rounded-lg my-3 mt-8 font-medium hover:bg-slate-300">Proceed</button>
+            </div> 
+            }
+
+
             {selectedOption.address && (
               <>
                 {/* Address */}
@@ -135,6 +154,7 @@ export function TopUpPage() {
             )}
 
             {/* Transaction Details */}
+            {/* {selectedOption.id === "stars" ? } */}
             <div className="space-y-4 flex justify-between items-center gap-4 text-sm ">
               <div className="w-[60%] mt-3">
                 <div className="flex justify-between items-center border-b border-stroke-secondary pb-[1.5px] mb-[2px]">
