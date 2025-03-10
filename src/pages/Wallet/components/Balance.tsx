@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowLeftRight, ArrowUp } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 interface BalanceProps {
   amount: number
@@ -6,6 +7,8 @@ interface BalanceProps {
 }
 
 export function Balance({ amount, currency = "₦" }: BalanceProps) {
+  const navigate = useNavigate()
+
   return (
     <div className="text-center mb-8 pt-4">
       {/* Balance Display */}
@@ -16,7 +19,7 @@ export function Balance({ amount, currency = "₦" }: BalanceProps) {
 
       {/* Action Buttons */}
       <div className="grid grid-cols-3 gap-8 max-w-xs mx-auto">
-        <button className="group flex flex-col items-center">
+        <button onClick={() => navigate("/top-up")} className="group flex flex-col items-center">
           <div className="w-12 h-12 rounded-full bg-[#1C1C1E] flex items-center justify-center mb-2 group-hover:bg-[#2C2C2E] transition-colors">
             <ArrowDown className="w-6 h-6 text-[#fff] transform transition-transform group-hover:scale-110" />
           </div>

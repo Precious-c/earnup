@@ -7,10 +7,12 @@ import cryptoWalletImg from "@/assets/images/wallet-bg-7be46582.png";
 import tonWalletImg from "@/assets/images/web3-type-6249bc51.png";
 import checkinIcon from "@/assets/icons/daily-24.png";
 import referIcon from   "@/assets/icons/add-user-26.png";
+import tonIcon from "@/assets/icons/toncoin-ton-logo.svg"
+import usdtIcon from "@/assets/icons/tether-usdt-logo.svg"
+import starsIcon from "@/assets/icons/tg-stars.png"
 
 
-import { Task } from "./types";
-
+import { Task, TopUpOption } from "./types";
 
 export const tasksData: Task[] = [
   {
@@ -266,13 +268,10 @@ export const tasksData: Task[] = [
   },
 ]
 
-// // Function to get a task by ID
+// Function to get a task by ID
 export function getTaskById(taskId: string | undefined): Task | undefined {
   return tasksData.find((task) => task.id === taskId)
 }
-
-
-
 
 export interface QuizQuestion {
   id: number
@@ -378,7 +377,8 @@ export const plansData = {
     ],
   },
 }
-  export const plansDataArray = [
+
+export const plansDataArray = [
      {
       id: "basic",
       name: "Basic Plan",
@@ -421,4 +421,36 @@ export const plansData = {
         "No minimum withdrawal threshold",
       ],
     },
-  ]
+]
+
+export const topUpOptions: TopUpOption[] = [
+  {
+    id: "ton",
+    name: "TON",
+    symbol: "TON",
+    icon: tonIcon,
+    address: "EQAigd8MjqsJejMuIB0UPhErOIGe22dezkpjvpWt9kOrtkG8",
+    memo: "2817225727",
+    minimum: "1 TON",
+    confirmations: 1,
+    fee: "0 TON",
+  },
+  {
+    id: "usdt",
+    name: "Tether",
+    symbol: "USDT",
+    icon: usdtIcon,
+    address: "TYuK8rEKkzGXvQxbxjwcXbJ3MeHnZYxw7M",
+    minimum: "1 USDT",
+    confirmations: 2,
+    fee: "1 USDT",
+  },
+  {
+    id: "stars",
+    name: "Telegram Stars",
+    symbol: "STARS",
+    icon: starsIcon,
+    minimum: "10 STARS",
+    fee: "0 STARS",
+  },
+]

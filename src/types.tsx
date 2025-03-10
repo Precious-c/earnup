@@ -32,5 +32,17 @@ export interface Task {
   status: "pending" | "completed" | "failed"
   backgroundPattern?: "coins" | "none"
 }
+
+export interface TopUpOption {
+  id: string
+  name: string
+  symbol: string
+  icon: string
+  address?: string
+  memo?: string
+  minimum?: string
+  confirmations?: number
+  fee?: string
+}
   
   
