@@ -69,7 +69,7 @@ export function TopUpPage() {
         // Deposit Details Screen
         <>
           <div className="sticky top-0 z-10 ">
-            <div className="flex items-center px-4 py-2 justify-between">
+            <div className="flex items-center  py-2 justify-between">
               <h1 className="text-xl font-medium ">Deposit {selectedOption.symbol}</h1>
               <button
                 onClick={() => setSelectedOption(null)}
@@ -80,7 +80,7 @@ export function TopUpPage() {
             </div>
           </div>
 
-          <div className="px-4 pt-4 pb-20">
+          <div className=" pt-4 pb-20">
             {/* Currency Selection */}
             <div className="bg-[#1C1C1E] rounded-xl p-4 mb-4">
               <div className="text-sm text-gray-400 mb-2">Currency</div>
