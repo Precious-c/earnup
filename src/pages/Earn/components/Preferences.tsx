@@ -4,6 +4,11 @@ import { useState } from "react";
 
 const Preferences = () => {
   const [vibration, setVibration] = useState(true)
+
+  const handleVibration = () => {
+    setVibration(!vibration) 
+    navigator.vibrate(300)
+  }
  
   return (
 
@@ -22,7 +27,7 @@ const Preferences = () => {
         <Vibrate className="mr-4" />
         <span className="text-white">Vibration</span>
       </div>
-      <Switch onClick={() => setVibration(!vibration)}/>
+      <Switch onClick={handleVibration}/>
     </div>
   </div>
   );
