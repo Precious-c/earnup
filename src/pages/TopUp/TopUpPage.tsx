@@ -155,6 +155,7 @@ export function TopUpPage() {
 
             {/* Transaction Details */}
             {/* {selectedOption.id === "stars" ? } */}
+            {selectedOption.id !== "stars" && 
             <div className="space-y-4 flex justify-between items-center gap-4 text-sm ">
               <div className="w-[60%] mt-3">
                 <div className="flex justify-between items-center border-b border-stroke-secondary pb-[1.5px] mb-[2px]">
@@ -180,7 +181,9 @@ export function TopUpPage() {
               <div className="bg-[#1C1C1E] rounded-xl p-2 flex justify-center w-[40%]">
                   <img src={qrCode} alt="" className=""/>
               </div>
+              
             </div>
+}
 
             {/* Warning */}
             <div className=" text-center text-sm text-gray-400">
