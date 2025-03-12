@@ -1,6 +1,6 @@
+import { CancelButton } from '@/components/CancelButton'
 import { WithdrawOption } from '@/types'
-import { AlertCircle, ArrowLeft } from 'lucide-react'
-import React from 'react'
+import { AlertCircle } from 'lucide-react'
 
 interface Props {
     selectedOption : WithdrawOption
@@ -12,7 +12,6 @@ interface Props {
     setMemo : (memo : string) => void
     step : "details" | "confirm" | "select"
     setStep : (step : "details" | "confirm" | "select") => void
-    
 }
 
 const WithdrawDetails = ({amount, address, memo, step, selectedOption, setAddress, setAmount, setMemo, setStep}: Props) => {
@@ -31,21 +30,23 @@ const WithdrawDetails = ({amount, address, memo, step, selectedOption, setAddres
       }
     
     const isValidAddress = () => {
-        return address.length > 10 // Simple validation, would be more complex in reality
+        return address.length > 10 
     }
 
     const canContinue = isValidAmount() && isValidAddress()
 
-
   return (
     <>
-    <button
-            onClick={() => setStep("select")}
-            className="p-2 -ml-2 hover:bg-[#1C1C1E] rounded-full transition-colors"
-          >
-            <ArrowLeft className="w-6 h-6" />
-          </button>
-      <div className="p-2 pt-4 pb-20">
+        
+        <div className="sticky top-0 z-10 ">
+            <div className="flex items-center  py-2 justify-between">
+              <h1 className={`text-xl font-medium `}>Withdraw {selectedOption.symbol}</h1>
+              <CancelButton step="select" setStep={setStep} className='z-40'/>
+              
+            </div>
+          </div>
+        
+      <div className="pb-20">
         {/* Amount Input */}
         <div className="bg-[#1C1C1E] rounded-xl p-4 mb-4">
           <div className="text-sm text-gray-400 mb-2">Amount</div>
@@ -71,7 +72,7 @@ const WithdrawDetails = ({amount, address, memo, step, selectedOption, setAddres
             <button
               className="text-xs text-[#4CD964]"
               onClick={() => {
-                // Set to max available (in a real app, this would be dynamic)
+                // Set to max available amount
                 setAmount(selectedOption.minAmount.split(" ")[0])
               }}
             >
@@ -95,7 +96,7 @@ const WithdrawDetails = ({amount, address, memo, step, selectedOption, setAddres
           )}
         </div>
 
-        {/* MEMO Input (for certain cryptocurrencies) */}
+        {/* MEMO Input  */}
         {selectedOption.id === "ton" && (
           <div className="bg-[#1C1C1E] rounded-xl p-4 mb-4">
             <div className="text-sm text-gray-400 mb-2">MEMO (Optional)</div>
