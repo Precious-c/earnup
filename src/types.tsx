@@ -45,4 +45,15 @@ export interface TopUpOption {
   fee?: string
 }
   
+
+export interface WithdrawOption {
+  id: string
+  name: string
+  symbol: string
+  icon: string
+  fee: string
+  minAmount: string
+  processingTime: string
+  network?: string
+}
   

@@ -12,7 +12,7 @@ import usdtIcon from "@/assets/icons/tether-usdt-logo.svg"
 import starsIcon from "@/assets/icons/tg-stars.png"
 
 
-import { Task, TopUpOption } from "./types";
+import { Task, TopUpOption, WithdrawOption } from "./types";
 
 export const tasksData: Task[] = [
   {
@@ -452,5 +452,37 @@ export const topUpOptions: TopUpOption[] = [
     icon: starsIcon,
     minimum: "10 STARS",
     fee: "0 STARS",
+  },
+]
+
+export const withdrawOptions: WithdrawOption[] = [
+  {
+    id: "ton",
+    name: "TON",
+    symbol: "TON",
+    icon: tonIcon,
+    fee: "0.5 TON",
+    minAmount: "2 TON",
+    processingTime: "~10 minutes",
+    network: "TON Network",
+  },
+  {
+    id: "usdt",
+    name: "Tether",
+    symbol: "USDT",
+    icon: usdtIcon,
+    fee: "2 USDT",
+    minAmount: "10 USDT",
+    processingTime: "~30 minutes",
+    network: "Tron (TRC20)",
+  },
+  {
+    id: "stars",
+    name: "Telegram Stars",
+    symbol: "STARS",
+    icon: starsIcon,
+    fee: "0 STARS",
+    minAmount: "10 STARS",
+    processingTime: "Instant",
   },
 ]

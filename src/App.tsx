@@ -7,6 +7,7 @@ import Profile from "@/pages/Profile/ProfilePage";
 import PlansPage from "./pages/Plans/PlansPage";
 import TaskDetailPage from "./pages/Task/TaskDetailPage";
 import { TopUpPage } from "./pages/TopUp/TopUpPage";
+import { WithdrawPage } from "./pages/Withdraw/WithdrawPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/plans/" element={<PlansPage />} />
           <Route path="/tasks/:taskId" element={<TaskDetailPage />} />
           <Route path="/top-up" element={<TopUpPage />} />
+          <Route path="/withdraw" element={<WithdrawPage />} /> 
           <Route path="/" element={<Navigate to="/wallet" replace />} />
         </Routes>
         <BottomNavbar />
