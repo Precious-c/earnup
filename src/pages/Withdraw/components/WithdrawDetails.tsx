@@ -3,7 +3,7 @@ import { AlertCircle, ArrowLeft } from 'lucide-react'
 import React from 'react'
 
 interface Props {
-    selectedOption : WithdrawOption | null
+    selectedOption : WithdrawOption
     amount : string
     setAmount : (amount : string) => void
     address : string
