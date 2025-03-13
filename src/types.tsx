@@ -46,14 +46,32 @@ export interface TopUpOption {
 }
   
 
+// export interface WithdrawOption {
+//   id: string
+//   name: string
+//   symbol: string
+//   icon: string
+//   fee: string
+//   minAmount: string
+//   processingTime: string
+//   network?: string
+// }
+  
+
 export interface WithdrawOption {
   id: string
   name: string
-  symbol: string
   icon: string
   fee: string
   minAmount: string
   processingTime: string
-  network?: string
 }
-  
+
+export interface WithdrawFormData {
+  address?: string
+  amount: string
+  bankName?: string
+  accountNumber?: string
+  accountName?: string
+  swiftCode?: string
+}

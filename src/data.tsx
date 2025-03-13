@@ -10,6 +10,8 @@ import referIcon from   "@/assets/icons/add-user-26.png";
 import tonIcon from "@/assets/icons/toncoin-ton-logo.svg"
 import usdtIcon from "@/assets/icons/tether-usdt-logo.svg"
 import starsIcon from "@/assets/icons/tg-stars.png"
+import bankIcon from "@/assets/icons/bank-48.png"
+
 
 
 import { Task, TopUpOption, WithdrawOption } from "./types";
@@ -455,34 +457,53 @@ export const topUpOptions: TopUpOption[] = [
   },
 ]
 
+// export const withdrawOptions: WithdrawOption[] = [
+//   {
+//     id: "ton",
+//     name: "TON",
+//     symbol: "TON",
+//     icon: tonIcon,
+//     fee: "0.5 TON",
+//     minAmount: "2 TON",
+//     processingTime: "~10 minutes",
+//     network: "TON Network",
+//   },
+//   {
+//     id: "usdt",
+//     name: "Tether",
+//     symbol: "USDT",
+//     icon: usdtIcon,
+//     fee: "2 USDT",
+//     minAmount: "10 USDT",
+//     processingTime: "~30 minutes",
+//     network: "Tron (TRC20)",
+//   },
+//   {
+//     id: "stars",
+//     name: "Telegram Stars",
+//     symbol: "STARS",
+//     icon: starsIcon,
+//     fee: "0 STARS",
+//     minAmount: "10 STARS",
+//     processingTime: "Instant",
+//   },
+// ]
+
 export const withdrawOptions: WithdrawOption[] = [
   {
     id: "ton",
     name: "TON",
-    symbol: "TON",
     icon: tonIcon,
-    fee: "0.5 TON",
-    minAmount: "2 TON",
-    processingTime: "~10 minutes",
-    network: "TON Network",
+    fee: "0.1 TON",
+    minAmount: "1 TON",
+    processingTime: "~20 minutes",
   },
   {
-    id: "usdt",
-    name: "Tether",
-    symbol: "USDT",
-    icon: usdtIcon,
-    fee: "2 USDT",
-    minAmount: "10 USDT",
-    processingTime: "~30 minutes",
-    network: "Tron (TRC20)",
-  },
-  {
-    id: "stars",
-    name: "Telegram Stars",
-    symbol: "STARS",
-    icon: starsIcon,
-    fee: "0 STARS",
-    minAmount: "10 STARS",
-    processingTime: "Instant",
+    id: "bank",
+    name: "Bank Account",
+    icon: bankIcon,
+    fee: "2%",
+    minAmount: "2000 NGN",
+    processingTime: "24 hrs",
   },
 ]

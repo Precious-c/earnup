@@ -8,7 +8,6 @@ import PlansPage from "./pages/Plans/PlansPage";
 import TaskDetailPage from "./pages/Task/TaskDetailPage";
 import { TopUpPage } from "./pages/TopUp/TopUpPage";
 import { WithdrawPage } from "./pages/Withdraw/WithdrawPage";
-
 function App() {
   return (
     <Router>
