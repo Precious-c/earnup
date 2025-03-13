@@ -23,7 +23,7 @@ const WalletPage = () => {
   ]
   return (
     <div className="py-3 pb-20  ">
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between px-2 py-3">
         <div className="flex items-center">
           <h1 className="text-xl font-medium text-white">Wallet</h1>
         </div>
