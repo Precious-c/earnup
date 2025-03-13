@@ -46,7 +46,7 @@ export function WithdrawPage() {
     if (selectedOption?.id === "ton") {
       if (!formData.address || formData.address.trim() === "") {
         newErrors.address = "Please enter a valid TON address"
-      } else validateAddress(formData.address) === false && (newErrors.address = "Please enter a valid TON address")
+      } //else validateAddress(formData.address) === false && (newErrors.address = "Please enter a valid TON address")
       
     } else if (selectedOption?.id === "bank") {
       if (!formData.bankName || formData.bankName.trim() === "") {
