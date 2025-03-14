@@ -1,21 +1,16 @@
-import { ProfileMenuItem } from "./components/ProfileMenuItems"
-import { menuItems } from "@/assets/icons/ProfileIcons"
+import { Toaster } from "react-hot-toast";
+import { ItemDrawer } from "./components/ItemDrawer";
+import { menuItems } from "@/data";
 
 const ProfilePage = () => {
-  const userEmail = "preshbryno@gmail.com"
-
-  const handleMenuItemClick = (item: (typeof menuItems)[0]) => {
-    if (item.external) {
-      window.open(item.href, "_blank")
-    } else {
-      
-      console.log(`Navigating to: ${item.href}`)
-    }
-  }
+  const userEmail = "preshbryno@gmail.com";
 
   return (
     <div className="min-h-screen ">
-      
+      <div className="z-20">
+        <Toaster />
+      </div>
+
       <main className="pt-8 pb-20">
         {/* User Email */}
         <div className="mb-3">
@@ -23,22 +18,20 @@ const ProfilePage = () => {
         </div>
 
         {/* Menu Items */}
-        <div className="space-y-1">
+        <div className="space-y-1 flex flex-col">
           {menuItems.map((item) => (
-            <ProfileMenuItem
+            <ItemDrawer
               key={item.id}
+              id={item.id}
               icon={item.icon}
               label={item.label}
               endIcon={item.endIcon}
-              onClick={() => handleMenuItemClick(item)}
             />
           ))}
         </div>
       </main>
-
-  
     </div>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;

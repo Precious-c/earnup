@@ -1,5 +1,5 @@
-const Vibrate = (duration:number) => {
-    navigator.vibrate(duration || 300)
-}
+const Vibrate = (duration: number) => {
+  navigator.vibrate(duration || 300);
+};
 
-export default Vibrate
+export default Vibrate;

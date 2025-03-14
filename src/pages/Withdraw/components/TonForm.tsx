@@ -1,20 +1,24 @@
-import { WithdrawFormData, WithdrawOption } from "@/types";
+import { WithdrawForm, WithdrawOption } from "@/types";
 import { AlertCircle } from "lucide-react";
 
 interface Props {
-    selectedOption: WithdrawOption;
-    formData: WithdrawFormData
-    handleConfirm: () => void
-    setStep: (step: "select" | "form" | "confirm") => void
-    handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    errors:any
-    handleSubmit: () => void
+  selectedOption: WithdrawOption;
+  formData: WithdrawForm;
+  handleConfirm: () => void;
+  setStep: (step: "select" | "form" | "confirm") => void;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  errors: any;
+  handleSubmit: () => void;
 }
 
-export const TonForm = ({formData,errors,selectedOption,handleInputChange, handleSubmit}:Props) => {
-    
-
-    return (
+export const TonForm = ({
+  formData,
+  errors,
+  selectedOption,
+  handleInputChange,
+  handleSubmit,
+}: Props) => {
+  return (
     <div className="pt-4 pb-20">
       <div className="space-y-4 mb-6">
         <div>
@@ -32,7 +36,9 @@ export const TonForm = ({formData,errors,selectedOption,handleInputChange, handl
               errors.address ? "border border-red-500" : ""
             }`}
           />
-          {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
+          {errors.address && (
+            <p className="text-red-500 text-sm mt-1">{errors.address}</p>
+          )}
         </div>
 
         <div>
@@ -50,7 +56,9 @@ export const TonForm = ({formData,errors,selectedOption,handleInputChange, handl
               errors.amount ? "border border-red-500" : ""
             }`}
           />
-          {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount}</p>}
+          {errors.amount && (
+            <p className="text-red-500 text-sm mt-1">{errors.amount}</p>
+          )}
         </div>
       </div>
 
@@ -76,7 +84,8 @@ export const TonForm = ({formData,errors,selectedOption,handleInputChange, handl
       <div className="flex items-start p-4 bg-[#1C1C1E] rounded-xl mb-6">
         <AlertCircle className="w-5 h-5 text-[#FF9500] mr-2 flex-shrink-0 mt-0.5" />
         <p className="text-sm text-gray-400">
-          Make sure the address is correct. Transactions cannot be reversed once processed.
+          Make sure the address is correct. Transactions cannot be reversed once
+          processed.
         </p>
       </div>
 
@@ -87,5 +96,5 @@ export const TonForm = ({formData,errors,selectedOption,handleInputChange, handl
         Continue
       </button>
     </div>
-  )
-}
+  );
+};
