@@ -16,7 +16,7 @@ export const WithdrawalConfirmation = ({
   setStep,
 }: Props) => {
   return (
-    <div className="px-4 pt-4 pb-20">
+    <div className="pt-4 pb-20">
       <div className="flex flex-col items-center justify-center mb-8">
         <div className="w-20 h-20 bg-[#1C1C1E] rounded-full flex items-center justify-center mb-4">
           <img
