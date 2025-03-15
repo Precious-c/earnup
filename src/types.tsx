@@ -58,14 +58,14 @@ export interface TopUpOption {
 //   network?: string
 // }
 
-export interface WithdrawOption {
-  id: string;
-  name: string;
-  icon: string;
-  fee: string;
-  minAmount: string;
-  processingTime: string;
-}
+// export interface WithdrawOption {
+//   id: string;
+//   name: string;
+//   icon: string;
+//   fee: string;
+//   minAmount: string;
+//   processingTime: string;
+// }
 
 export interface WithdrawForm {
   address?: string;
@@ -75,14 +75,14 @@ export interface WithdrawForm {
   accountName?: string;
 }
 
-export interface SavedPaymentMethod {
-  id: string;
-  type: "bank" | "crypto";
-  accountName: string;
-  accountNumber?: string;
-  bankName?: string;
-  address?: string;
-}
+// export interface SavedPaymentMethod {
+//   id: string;
+//   type: "bank" | "crypto";
+//   accountName: string;
+//   accountNumber?: string;
+//   bankName?: string;
+//   address?: string;
+// }
 
 export interface PaymentMethod {
   id: string;
@@ -100,4 +100,28 @@ export interface MenuItem {
   endIcon?: LucideIcon;
   href: string;
   external?: boolean;
+}
+
+export interface SavedPaymentMethod {
+  id: string;
+  type: "crypto" | "bank";
+  name: string;
+  accountName?: string;
+  details: string;
+  icon: string;
+  isDefault?: boolean;
+}
+
+export interface WithdrawOption {
+  id: string;
+  name: string;
+  icon: string;
+  fee: string;
+  minAmount: string;
+  processingTime: string;
+}
+
+export interface WithdrawFormData {
+  amount: string;
+  paymentMethodId: string;
 }

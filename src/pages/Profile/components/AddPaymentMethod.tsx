@@ -1,10 +1,10 @@
-import { PaymentMethod } from "@/types";
+import { SavedPaymentMethod } from "@/types";
 import { AlertCircle } from "lucide-react";
 import { useState } from "react";
 
 interface Props {
-  setPaymentMethods: React.Dispatch<React.SetStateAction<PaymentMethod[]>>;
-  paymentMethods: PaymentMethod[];
+  setPaymentMethods: React.Dispatch<React.SetStateAction<SavedPaymentMethod[]>>;
+  paymentMethods: SavedPaymentMethod[];
   errors: Record<string, string>;
   isAddingNew: boolean;
   setIsAddingNew: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,7 +13,6 @@ interface Props {
 
 const AddPaymentMethod = ({
   handleCancel,
-  isAddingNew,
   setIsAddingNew,
   setPaymentMethods,
   paymentMethods,
@@ -21,9 +20,9 @@ const AddPaymentMethod = ({
   const [formData, setFormData] = useState({
     id: "",
     type: "bank",
+    name: "",
     accountName: "",
-    accountNumber: "",
-    bankName: "",
+    details: "",
     isDefault: false,
   });
 
@@ -48,20 +47,22 @@ const AddPaymentMethod = ({
     }
 
     if (formData.type === "bank") {
-      if (!formData.bankName.trim()) {
-        newErrors.bankName = "Bank name is required";
+      if (!formData.name.trim()) {
+        newErrors.name = "Bank name is required";
       }
 
-      if (!formData.accountNumber.trim()) {
-        newErrors.accountNumber = "Account number is required";
+      if (!formData.details.trim()) {
+        newErrors.details = "Account number is required";
       }
 
-      if (formData.accountNumber.trim().length !== 10) {
-        newErrors.accountNumber = "Account should be 10 digits";
+      if (formData.type === "bank") {
+        if (formData.details.trim().length !== 10) {
+          newErrors.details = "Account should be 10 digits";
+        }
       }
     } else if (formData.type === "crypto") {
-      if (!formData.accountNumber.trim()) {
-        newErrors.accountNumber = "Wallet address is required";
+      if (!formData.details.trim()) {
+        newErrors.details = "Wallet address is required";
       }
     }
 
@@ -72,41 +73,9 @@ const AddPaymentMethod = ({
   const handleSaveMethod = () => {
     if (!validateForm()) return;
 
-    let updatedMethods: PaymentMethod[];
-
-    if (isAddingNew) {
-      if (formData.isDefault) {
-        updatedMethods = paymentMethods.map((method) => ({
-          ...method,
-          isDefault: false,
-        }));
-      } else {
-        updatedMethods = [...paymentMethods];
-      }
-
-      updatedMethods.push(formData as PaymentMethod);
-    } else {
-      // If editing and setting as default, remove default from others
-      if (formData.isDefault) {
-        updatedMethods = paymentMethods.map((method) => ({
-          ...method,
-          isDefault: method.id === formData.id,
-        }));
-      } else {
-        // If trying to unset default on the only default method, prevent it
-        const currentDefault = paymentMethods.find((m) => m.isDefault);
-        if (currentDefault?.id === formData.id) {
-          setErrors({
-            isDefault: "At least one payment method must be set as default",
-          });
-          return;
-        }
-
-        updatedMethods = paymentMethods.map((method) =>
-          method.id === formData.id ? (formData as PaymentMethod) : method
-        );
-      }
-    }
+    let updatedMethods: SavedPaymentMethod[];
+    updatedMethods = [...paymentMethods];
+    updatedMethods.push(formData as SavedPaymentMethod);
 
     setPaymentMethods(updatedMethods);
     // onSave(updatedMethods);
@@ -137,7 +106,7 @@ const AddPaymentMethod = ({
 
       <div>
         <label htmlFor="name" className="block text-sm text-gray-400 mb-1">
-          Name
+          Account Name
         </label>
         <input
           type="text"
@@ -159,7 +128,7 @@ const AddPaymentMethod = ({
         )}
       </div>
 
-      {formData.type === "bank" ? (
+      {formData.type === "bank" && (
         <>
           <div>
             <label
@@ -170,11 +139,11 @@ const AddPaymentMethod = ({
             </label>
             <input
               type="text"
-              id="bankName"
-              name="bankName"
-              value={formData.bankName}
+              id="name"
+              name="name"
+              value={formData.name}
               onChange={handleInputChange}
-              placeholder="e.g. Chase Bank"
+              placeholder="e.g. Access Bank"
               className={`w-full p-3 bg-[#2C2C2E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4CD964] ${
                 errors.bankName ? "border border-red-500" : ""
               }`}
@@ -183,58 +152,34 @@ const AddPaymentMethod = ({
               <p className="text-red-500 text-sm mt-1">{errors.bankName}</p>
             )}
           </div>
-
-          <div>
-            <label
-              htmlFor="accountNumber"
-              className="block text-sm text-gray-400 mb-1"
-            >
-              Account Number
-            </label>
-            <input
-              type="number"
-              max={10}
-              min={10}
-              id="accountNumber"
-              name="accountNumber"
-              value={formData.accountNumber}
-              onChange={handleInputChange}
-              placeholder="e.g. 5521238902"
-              className={`w-full p-3 bg-[#2C2C2E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4CD964] ${
-                errors.accountNumber ? "border border-red-500" : ""
-              }`}
-            />
-            {errors.accountNumber && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.accountNumber}
-              </p>
-            )}
-          </div>
         </>
-      ) : (
-        <div>
-          <label
-            htmlFor="accountNumber"
-            className="block text-sm text-gray-400 mb-1"
-          >
-            Wallet Address
-          </label>
-          <input
-            type="text"
-            id="accountNumber"
-            name="accountNumber"
-            value={formData.accountNumber}
-            onChange={handleInputChange}
-            placeholder="e.g. EQAigd8MjqsJejMuIB0UPhErOIGe22dezkpjvpWt9kOrtkG8"
-            className={`w-full p-3 bg-[#2C2C2E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4CD964] ${
-              errors.accountNumber ? "border border-red-500" : ""
-            }`}
-          />
-          {errors.accountNumber && (
-            <p className="text-red-500 text-sm mt-1">{errors.accountNumber}</p>
-          )}
-        </div>
       )}
+
+      <div>
+        <label htmlFor="details" className="block text-sm text-gray-400 mb-1">
+          {formData.type === "bank" ? "Account Number" : "Wallet Address"}
+        </label>
+        <input
+          type={formData.type === "bank" ? "number" : "text"}
+          max={formData.type === "bank" ? 10 : ""}
+          min={formData.type === "bank" ? 10 : ""}
+          id="details"
+          name="details"
+          value={formData.details}
+          onChange={handleInputChange}
+          placeholder={
+            formData.type === "bank"
+              ? "e.g. 5521238902"
+              : "e.g. EQAigd8MjqsJejMuIB0UPhErOIGe22dezkpjvpWt9kOrtkG8"
+          }
+          className={`w-full p-3 bg-[#2C2C2E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4CD964] ${
+            errors.details ? "border border-red-500" : ""
+          }`}
+        />
+        {errors.details && (
+          <p className="text-red-500 text-sm mt-1">{errors.details}</p>
+        )}
+      </div>
 
       <div className="flex items-center">
         <input

@@ -1,5 +1,4 @@
-import { WithdrawOption } from "@/types";
-import { SavedPaymentMethod } from "../WithdrawPage";
+import { SavedPaymentMethod, WithdrawOption } from "@/types";
 import { Plus } from "lucide-react";
 
 interface Props {

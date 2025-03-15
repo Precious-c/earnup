@@ -1,8 +1,8 @@
-import { PaymentMethod } from "@/types";
+import { SavedPaymentMethod } from "@/types";
 import { CreditCard, Plus, Trash2 } from "lucide-react";
 
 interface Props {
-  paymentMethods: PaymentMethod[];
+  paymentMethods: SavedPaymentMethod[];
   handleDelete: (id: string) => void;
   handleAddNew: () => void;
 }
@@ -28,17 +28,17 @@ const PaymentMethodsList = ({
                   </div>
                   <div>
                     <p className="font-medium text-white">
-                      {method.accountName}
+                      {method.accountName ? method.accountName : method.name}
                     </p>
                     <div className="text-sm text-gray-400">
                       {method.type === "bank"
-                        ? `${method.bankName} • ${method.accountNumber
+                        ? `${method.name} • ${method.details
                             .slice(-4)
-                            .padStart(method.accountNumber.length, "•")}`
-                        : `${method.accountNumber.slice(
+                            .padStart(method.details.length, "•")}`
+                        : `${method.details.slice(
                             0,
                             6
-                          )}...${method.accountNumber.slice(-4)}`}
+                          )}...${method.details.slice(-4)}`}
                     </div>
                     {method.isDefault && (
                       <div className="text-xs text-[#4CD964] mt-1">Default</div>

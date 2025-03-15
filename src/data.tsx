@@ -25,6 +25,7 @@ import {
 import {
   MenuItem,
   PaymentMethod,
+  SavedPaymentMethod,
   Task,
   TopUpOption,
   WithdrawOption,
@@ -582,5 +583,34 @@ export const paymentMethodsData: PaymentMethod[] = [
     accountName: "John Doe",
     accountNumber: "1234567890",
     bankName: "First Bank",
+  },
+];
+
+export const savedPaymentMethods: SavedPaymentMethod[] = [
+  {
+    id: "ton-wallet-1",
+    type: "crypto",
+    name: "TON Wallet",
+    details: "EQAigd85hSbs5dAosuh55d554nkompa52sdhbls22kOrtkG8",
+    icon: tonIcon,
+    isDefault: true,
+  },
+  {
+    id: "bank-account-1",
+    type: "bank",
+    name: "GT Bank",
+    accountName: "Hanson Pierrie",
+    details: "****4567",
+    icon: bankIcon,
+    isDefault: false,
+  },
+  {
+    id: "bank-account-2",
+    type: "bank",
+    accountName: "Koko Bassey",
+    name: "Opay",
+    details: "****7890",
+    icon: bankIcon,
+    isDefault: false,
   },
 ];

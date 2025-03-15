@@ -1,9 +1,11 @@
-import { WithdrawOption } from "@/types";
+import { SavedPaymentMethod, WithdrawFormData, WithdrawOption } from "@/types";
 import { AlertCircle } from "lucide-react";
-import { SavedPaymentMethod, WithdrawFormData } from "../WithdrawPage";
+// import { SavedPaymentMethod, WithdrawFormData } from "../WithdrawPage";
 import { useState } from "react";
 
 interface Props {
+  formData: WithdrawFormData;
+  setFormData: React.Dispatch<React.SetStateAction<WithdrawFormData>>;
   selectedPaymentMethod: SavedPaymentMethod | null;
   savedPaymentMethods: SavedPaymentMethod[];
   selectedOption: WithdrawOption | null;
@@ -13,14 +15,12 @@ interface Props {
 }
 
 export const AmountForm = ({
+  setFormData,
   selectedOption,
   setStep,
   selectedPaymentMethod,
+  formData,
 }: Props) => {
-  const [formData, setFormData] = useState<WithdrawFormData>({
-    amount: "",
-    paymentMethodId: "",
-  });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validateForm = () => {
@@ -37,7 +37,7 @@ export const AmountForm = ({
     if (selectedOption?.id === "ton" && Number(formData.amount) < 1) {
       newErrors.amount = "Minimum withdrawal amount is 1 TON";
     } else if (selectedOption?.id === "bank" && Number(formData.amount) < 10) {
-      newErrors.amount = "Minimum withdrawal amount is 10 EUR";
+      newErrors.amount = "Minimum withdrawal amount is 10 NGN";
     }
 
     setErrors(newErrors);
@@ -51,6 +51,7 @@ export const AmountForm = ({
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(formData);
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -70,7 +71,7 @@ export const AmountForm = ({
           />
           <div className="flex-1">
             <div className="font-medium">{selectedPaymentMethod?.name}</div>
-            <div className="text-sm text-gray-400">
+            <div className="text-sm text-gray-400 truncate max-w-[280px]">
               {selectedPaymentMethod?.details}
             </div>
           </div>
@@ -86,7 +87,7 @@ export const AmountForm = ({
       <div className="space-y-4 mb-6">
         <div>
           <label htmlFor="amount" className="block text-sm text-gray-400 mb-1">
-            Amount ({selectedOption?.id === "ton" ? "TON" : "EUR"})
+            Amount ({selectedOption?.id === "ton" ? "TON" : "NGN"})
           </label>
           <input
             type="text"
@@ -112,8 +113,8 @@ export const AmountForm = ({
             {selectedOption?.id === "ton"
               ? "0.1 TON"
               : formData.amount && !isNaN(Number(formData.amount))
-                ? `${(Number(formData.amount) * 0.02).toFixed(2)} EUR`
-                : "0.00 EUR"}
+                ? `${(Number(formData.amount) * 0.02).toFixed(2)} NGN`
+                : "0.00 NGN"}
           </span>
         </div>
         <div className="flex justify-between items-center mb-2">
@@ -122,10 +123,10 @@ export const AmountForm = ({
             {formData.amount && !isNaN(Number(formData.amount))
               ? selectedOption?.id === "ton"
                 ? `${(Number(formData.amount) - 0.1).toFixed(2)} TON`
-                : `${(Number(formData.amount) * 0.98).toFixed(2)} EUR`
+                : `${(Number(formData.amount) * 0.98).toFixed(2)} NGN`
               : selectedOption?.id === "ton"
                 ? "0.00 TON"
-                : "0.00 EUR"}
+                : "0.00 NGN"}
           </span>
         </div>
         <div className="flex justify-between items-center">

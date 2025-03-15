@@ -1,20 +1,20 @@
-import { PaymentMethod } from "@/types";
+import { SavedPaymentMethod } from "@/types";
 import { useState } from "react";
-import { paymentMethodsData } from "@/data";
+import { savedPaymentMethods } from "@/data";
 import PaymentMethodsList from "./PaymentMethodsList";
 import AddPaymentMethod from "./AddPaymentMethod";
 import toast from "react-hot-toast";
 
 const PaymentDetailsDrawer = () => {
   const [paymentMethods, setPaymentMethods] =
-    useState<PaymentMethod[]>(paymentMethodsData);
+    useState<SavedPaymentMethod[]>(savedPaymentMethods);
   const [isAddingNew, setIsAddingNew] = useState(false);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleAddNew = () => {
-    paymentMethods.length > 0
-      ? toast.error("Payment details already added")
+    paymentMethods.length === 3
+      ? toast.error("Max amount of payment methods reached")
       : setIsAddingNew(true);
 
     setErrors({});

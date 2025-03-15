@@ -1,20 +1,22 @@
-import { WithdrawForm, WithdrawOption } from "@/types";
+import { SavedPaymentMethod, WithdrawForm, WithdrawOption } from "@/types";
 import { AlertCircle, Copy } from "lucide-react";
 
 interface Props {
-  selectedOption: WithdrawOption;
+  selectedOption: WithdrawOption | null;
   formData: WithdrawForm;
+  selectedPaymentMethod: SavedPaymentMethod | null;
   handleConfirm: () => void;
-  setStep: (step: "select" | "form" | "confirm") => void;
+  setStep: (step: "select" | "payment-method" | "amount" | "confirm") => void;
 }
 export const WithdrawalConfirmation = ({
   selectedOption,
+  selectedPaymentMethod,
   formData,
   handleConfirm,
   setStep,
 }: Props) => {
   return (
-    <div className=" pt-4 pb-20">
+    <div className="px-4 pt-4 pb-20">
       <div className="flex flex-col items-center justify-center mb-8">
         <div className="w-20 h-20 bg-[#1C1C1E] rounded-full flex items-center justify-center mb-4">
           <img
@@ -36,9 +38,7 @@ export const WithdrawalConfirmation = ({
 
           <div className="flex justify-between items-center">
             <span className="text-gray-400">Amount</span>
-            <span>
-              {formData.amount} {selectedOption?.id === "ton" ? "TON" : "EUR"}
-            </span>
+            <span>{formData.amount}</span>
           </div>
 
           <div className="flex justify-between items-center">
@@ -46,7 +46,7 @@ export const WithdrawalConfirmation = ({
             <span>
               {selectedOption?.id === "ton"
                 ? "0.1 TON"
-                : `${(Number(formData.amount) * 0.02).toFixed(2)} EUR`}
+                : `${(Number(formData.amount) * 0.02).toFixed(2)} NGN`}
             </span>
           </div>
 
@@ -55,42 +55,34 @@ export const WithdrawalConfirmation = ({
             <span className="font-medium">
               {selectedOption?.id === "ton"
                 ? `${(Number(formData.amount) - 0.1).toFixed(2)} TON`
-                : `${(Number(formData.amount) * 0.98).toFixed(2)} EUR`}
+                : `${(Number(formData.amount) * 0.98).toFixed(2)} NGN`}
             </span>
           </div>
 
-          {selectedOption?.id === "ton" ? (
-            <div className="flex justify-between items-center">
-              <span className="text-gray-400">To address</span>
-              <div className="flex items-center">
-                <span className="text-sm truncate max-w-[150px]">
-                  {formData.address}
-                </span>
-                <button
-                  onClick={() =>
-                    formData.address &&
-                    navigator.clipboard.writeText(formData.address)
-                  }
-                  className="ml-2 p-1 hover:bg-[#3C3C3E] rounded-lg transition-colors"
-                >
-                  <Copy className="w-4 h-4" />
-                </button>
-              </div>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">To</span>
+            <div className="flex items-center">
+              <span className="text-sm">{selectedPaymentMethod?.name}</span>
             </div>
-          ) : (
-            <>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-400">Bank</span>
-                <span>{formData.bankName}</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-400">Account</span>
-                <span className="text-sm truncate max-w-[200px]">
-                  {formData.accountNumber}
-                </span>
-              </div>
-            </>
-          )}
+          </div>
+
+          <div className="flex justify-between items-center">
+            <span className="text-gray-400">Details</span>
+            <div className="flex items-center">
+              <span className="text-sm truncate max-w-[150px]">
+                {selectedPaymentMethod?.details}
+              </span>
+              <button
+                onClick={() =>
+                  selectedPaymentMethod?.details &&
+                  navigator.clipboard.writeText(selectedPaymentMethod.details)
+                }
+                className="ml-2 p-1 hover:bg-[#3C3C3E] rounded-lg transition-colors"
+              >
+                <Copy className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
 
           <div className="flex justify-between items-center">
             <span className="text-gray-400">Processing time</span>
@@ -116,7 +108,7 @@ export const WithdrawalConfirmation = ({
         </button>
 
         <button
-          onClick={() => setStep("form")}
+          onClick={() => setStep("amount")}
           className="w-full py-4 bg-[#2C2C2E] text-white font-medium rounded-xl hover:bg-[#3C3C3E] transition-colors"
         >
           Edit Details
