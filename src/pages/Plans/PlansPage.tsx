@@ -84,7 +84,7 @@ const plansPage = () => {
                   key={plan.id}
                   className="flex flex-col items-center justify-center"
                 >
-                  <div className="relative mb-28 h-fit sm:h-[300px] -mr-1">
+                  <div className="relative w-full mb-36 h-fit sm:h-[300px] -mr-1">
                     <img
                       src={plan.image}
                       alt={plan.name}
@@ -95,17 +95,20 @@ const plansPage = () => {
                         {plan.name}
                       </h1>
                       <p className="text-[15px] text-white font-poppins tracking-wide mb-2">
-                        {plan.description}
+                        {/* {plan.description} */}
                       </p>
                     </div>
                   </div>
 
                   {/* Features */}
                   <div className="space-y-4 ">
+                    <p className="text-[15px] text-white font-poppins tracking-wide px-2 mt-3 pb-2">
+                      {plan.description}
+                    </p>
                     {plan.features.map((feature, index) => (
                       <div
                         key={index}
-                        className="flex items-center rounded-lg p-1"
+                        className="flex items-center rounded-lg p-1 "
                       >
                         <div className="bg-stroke-secondary rounded-lg p-3 mr-4 flex items-center justify-center">
                           <ShieldCheck className="w-7 h-7" strokeWidth={2} />
