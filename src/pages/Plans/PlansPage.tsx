@@ -81,17 +81,17 @@ const plansPage = () => {
             {plansDataArray.map((plan) => {
               return (
                 <CarouselItem key={plan.id}>
-                  <div className="relative mb-28  h-fit sm:h-[300px] -mr-1">
+                  <div className="relative mb-28 h-fit sm:h-[300px] -mr-1">
                     <img
                       src={plan.image}
                       alt={plan.name}
                       className="w-full -z-10 absolute max-w-[433px] max-h-[269px] min-w-[295px]"
                     />
                     <div className="flex flex-col pl-7 pt-4 px-4 py-3 rounded-3xl">
-                      <h1 className="text-2xl font-medium mb-2 mt-2">
+                      <h1 className="text-xl font-semibold mt-2">
                         {plan.name}
                       </h1>
-                      <p className="text-[16px] text-white font-poppins tracking-wide mb-2">
+                      <p className="text-[15px] text-white font-poppins tracking-wide mb-2">
                         {plan.description}
                       </p>
                     </div>
