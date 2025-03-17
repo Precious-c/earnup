@@ -422,7 +422,7 @@ export const plansDataArray = [
     name: "Gold Plan",
     price: 5000,
     description: "Unlock premium features and weekly rewards",
-    color: "#FFD700",
+    color: "#ffbc00",
     image: goldPlanImg,
     features: [
       "Up to 25 tasks per day, including premium tasks",

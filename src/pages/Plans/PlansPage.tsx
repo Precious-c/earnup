@@ -75,12 +75,15 @@ const plansPage = () => {
         <ArrowLeft className="w-6 h-6" />
       </button>
 
-      <main className="pt-4">
+      <main className="pt-4 ">
         <Carousel className="w-full" setApi={setApi}>
           <CarouselContent>
             {plansDataArray.map((plan) => {
               return (
-                <CarouselItem key={plan.id}>
+                <CarouselItem
+                  key={plan.id}
+                  className="flex flex-col items-center justify-center"
+                >
                   <div className="relative mb-28 h-fit sm:h-[300px] -mr-1">
                     <img
                       src={plan.image}
