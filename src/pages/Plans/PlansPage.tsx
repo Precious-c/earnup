@@ -94,9 +94,6 @@ const plansPage = () => {
                       <h1 className="text-xl font-semibold mt-2">
                         {plan.name}
                       </h1>
-                      <p className="text-[15px] text-white font-poppins tracking-wide mb-2">
-                        {/* {plan.description} */}
-                      </p>
                     </div>
                   </div>
 
