@@ -9,7 +9,7 @@ const CoinCatcher = ({ balance }: CoinCatcherProps) => {
       <div className="relative w-24 h-24 mx-auto mb-4">
         <div className="absolute inset-0 bg-[#4CD964] rounded-full opacity-20 animate-pulse"></div>
         <div className="relative z-10 w-full h-full flex items-center justify-center">
-          <img src={koloCoin} alt="Kolo coin" className="w-16 h-16" />
+          <img src={koloCoin} alt="Muna coin" className="w-16 h-16" />
         </div>
       </div>
       <p className="text-secondary text-sm">Catch the coin</p>

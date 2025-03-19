@@ -15,7 +15,11 @@ export const Communities = () => {
       <div className="max-w-full flex gap-3 overflow-x-scroll overflow-y-hidden">
         <CommunityCard name="OKX" image={okxImage} communityCount={22500} />
         <CommunityCard name="CATS" image={catsImage} communityCount={1022500} />
-        <CommunityCard name="KOLO COIN TOKEN" image={koloImage} communityCount={200500} />
+        <CommunityCard
+          name="MUNA WALLET"
+          image={koloImage}
+          communityCount={200500}
+        />
         <CommunityCard name="OKX" image={okxImage} communityCount={22500} />
         <CommunityCard name="OKX" image={okxImage} communityCount={22500} />
       </div>
