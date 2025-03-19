@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import { BottomNavbar } from "./components/BottomNavbar";
 import Wallet from "@/pages/Wallet/WalletPage";
 import Earn from "@/pages/Earn/EarnPage";
@@ -8,6 +13,7 @@ import PlansPage from "./pages/Plans/PlansPage";
 import TaskDetailPage from "./pages/Task/TaskDetailPage";
 import { TopUpPage } from "./pages/TopUp/TopUpPage";
 import { WithdrawPage } from "./pages/Withdraw/WithdrawPage";
+import CreateTaskPage from "./pages/CreateTask/CreateTaskPage";
 function App() {
   return (
     <Router>
@@ -20,7 +26,8 @@ function App() {
           <Route path="/plans/" element={<PlansPage />} />
           <Route path="/tasks/:taskId" element={<TaskDetailPage />} />
           <Route path="/top-up" element={<TopUpPage />} />
-          <Route path="/withdraw" element={<WithdrawPage />} /> 
+          <Route path="/withdraw" element={<WithdrawPage />} />
+          <Route path="/tasks/create" element={<CreateTaskPage />} />
           <Route path="/" element={<Navigate to="/wallet" replace />} />
         </Routes>
         <BottomNavbar />

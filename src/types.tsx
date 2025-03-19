@@ -125,3 +125,29 @@ export interface WithdrawFormData {
   amount: string;
   paymentMethodId: string;
 }
+
+export type TaskPlatform = "telegram" | "twitter" | "discord";
+
+export interface GeoTarget {
+  language?: string;
+  region?: string;
+}
+
+export interface TaskFormData {
+  // Step 1
+  description: string;
+  link: string;
+  contact: string;
+  projectDescription: string;
+  platform: TaskPlatform;
+  geoTarget?: GeoTarget;
+
+  // Step 2
+  numberOfClicks: number;
+  paymentMethod: "ton" | "usdt" | "seconds";
+  pricePerClick: number;
+  totalPrice: number;
+
+  // Step 3
+  // This step is just for review and confirmation
+}
