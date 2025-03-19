@@ -7,8 +7,8 @@ const CreateTaskCard = () => {
         <img src={createtaskIcon} alt="" className="w-20 h-20" />
       </div>
       <div>
-        <p className="text-medium text-lg">I want my task here</p>
-        <p className="text-accent-green flex gap-2">
+        <p className="font-medium text-lg">I want my task here</p>
+        <p className="text-accent-green flex gap-2 text-sm">
           Create your own task here <ArrowRight />
         </p>
       </div>
