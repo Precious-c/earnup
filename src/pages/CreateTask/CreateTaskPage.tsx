@@ -74,10 +74,10 @@ export default function CreateTaskPage() {
 
         {currentStep === 0 && (
           <div className="">
-            <h2 className="font-semibold text-xl text-center mb-4">
+            <h2 className="font-semibold text-xl text-center mb-6">
               Introducing Muna Wallet Parters Program
             </h2>
-            <p className="text-center mb-4">
+            <p className="text-center mb-6 tracking-wide">
               Select the number of impressions or clicks you need, create your
               task, pay with Muna Points, USDT or TON
             </p>
@@ -93,23 +93,27 @@ export default function CreateTaskPage() {
               />
             </div>
 
-            <ul className="flex flex-col gap-2ml-4 mb-4">
-              <li className="flex gap-1 items-center">
-                <Dot size={40} className="text-accent-green" />
-                27M Muna Wallet Users, 5M Daily Active Users
+            <ul className="flex flex-col mb-6 list-disc">
+              <li className="flex items-center ">
+                <div className="w-[10%]">
+                  <Dot className="text-accent-green w-10 h-10 m-0 p-0" />
+                </div>
+                <p>27M Muna Wallet Users, 5M Daily Active Users</p>
               </li>
-              <li className="flex gap-1 items-center">
-                <Dot size={40} className="text-accent-green" />
-                Pay with Muna Points, USDT or TONs
+              <li className="flex items-center">
+                <div className="w-[10%]">
+                  <Dot className="text-accent-green w-10 h-10 m-0 p-0" />
+                </div>
+                <p>Pay with Muna Points, USDT or TONs</p>
               </li>
-              <li className="flex gap-1 items-center ">
-                {/* <div className="flex"> */}
-                <Dot size={75} className="text-accent-green" />
-                {/* <p> */}
-                Geo-Targeting: Target your tasks by location in over 150
-                countries(Coming soon)
-                {/* </p> */}
-                {/* </div> */}
+              <li className="flex items-start ">
+                <div className="w-[10%]">
+                  <Dot className="text-accent-green w-10 h-10 m-0 p-0" />
+                </div>
+                <p>
+                  Geo-Targeting: Target your tasks by location in over 150
+                  countries(Coming soon)
+                </p>
               </li>
             </ul>
 
@@ -117,7 +121,7 @@ export default function CreateTaskPage() {
               Read full rules here <ArrowRight />
             </a>
 
-            <Button size="lg" className="w-full">
+            <Button size="lg" className="w-full my-6">
               Publish own task
             </Button>
           </div>
