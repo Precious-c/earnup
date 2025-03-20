@@ -238,7 +238,7 @@ export function CreateTaskStep1({
           value={formData.link}
           onChange={(e) => updateFormData({ link: e.target.value })}
           placeholder="Please insert the link here"
-          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4945FF] ${
+          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-accent-green ${
             errors.link ? "border border-red-500" : ""
           }`}
         />
@@ -269,7 +269,7 @@ export function CreateTaskStep1({
         <div className="relative">
           <select
             id="languageRegion"
-            className="w-full p-3 bg-[#1C1C1E] rounded-xl text-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#4945FF]"
+            className="w-full p-3 bg-[#1C1C1E] rounded-xl text-white appearance-none focus:outline-none focus:ring-1 focus:ring-accent-green"
             onChange={(e) =>
               updateFormData({
                 geoTarget: { language: e.target.value },
@@ -278,7 +278,7 @@ export function CreateTaskStep1({
           >
             <option value="">Select language or region</option>
             {geoTargetingData.map((option) => (
-              <option value={option.code}>{option.language}</option>
+              <option value={option.language}>{option.language}</option>
             ))}
           </select>
           <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -304,7 +304,7 @@ export function CreateTaskStep1({
           value={formData.contact}
           onChange={(e) => updateFormData({ contact: e.target.value })}
           placeholder="@username"
-          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4945FF] ${
+          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-accent-green ${
             errors.contact ? "border border-red-500" : ""
           }`}
         />
@@ -329,7 +329,7 @@ export function CreateTaskStep1({
           }
           placeholder="Tell us about your project and what you'd like to promote"
           rows={4}
-          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4945FF] ${
+          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-accent-green ${
             errors.projectDescription ? "border border-red-500" : ""
           }`}
         />
@@ -343,7 +343,7 @@ export function CreateTaskStep1({
       {/* Continue Button */}
       <button
         onClick={handleContinue}
-        className="w-full py-4 bg-[#4945FF] text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
+        className="w-full py-4 bg-accent-green text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
       >
         Continue
       </button>

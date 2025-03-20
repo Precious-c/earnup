@@ -195,7 +195,7 @@ export function CreateTaskStep3({
       <div className="flex flex-col space-y-3">
         <button
           onClick={onPublish}
-          className="w-full py-4 bg-[#4945FF] text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
+          className="w-full py-4 bg-accent-green text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
         >
           Publish for {formData.totalPrice}{" "}
           {formData.paymentMethod.toUpperCase()}

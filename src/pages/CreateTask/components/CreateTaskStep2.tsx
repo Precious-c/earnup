@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { TaskFormData } from "@/types";
 import tonIcon from "@/assets/icons/toncoin-ton-logo.svg";
+import { ChevronDown } from "lucide-react";
 type PaymentMethod = "ton" | "muna";
 
 interface CreateTaskStep2Props {
@@ -165,7 +166,7 @@ export function CreateTaskStep2({
             })
           }
           min={500}
-          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4945FF] ${
+          className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-accent-green ${
             errors.numberOfClicks ? "border border-red-500" : ""
           }`}
         />
@@ -187,7 +188,7 @@ export function CreateTaskStep2({
             onClick={() => handlePaymentMethodChange("muna")}
             className={`p-3 rounded-xl text-center transition-colors ${
               formData.paymentMethod === "muna"
-                ? "bg-[#4945FF] bg-opacity-20 text-white"
+                ? "bg-[#14d65a] bg-opacity-20 text-white"
                 : "bg-[#1C1C1E] text-gray-400"
             }`}
           >
@@ -198,7 +199,7 @@ export function CreateTaskStep2({
             onClick={() => handlePaymentMethodChange("ton")}
             className={`p-3 rounded-xl text-center transition-colors ${
               formData.paymentMethod === "ton"
-                ? "bg-[#4945FF] bg-opacity-20 text-white"
+                ? "bg-[#14d65a] bg-opacity-20 text-white"
                 : "bg-[#1C1C1E] text-gray-400"
             }`}
           >
@@ -216,9 +217,8 @@ export function CreateTaskStep2({
           <div className="relative">
             <button
               type="button"
-              className="w-full p-3 bg-[#1C1C1E] rounded-xl text-white flex items-center justify-between focus:outline-none focus:ring-1 focus:ring-[#4945FF]"
+              className="w-full p-3 bg-[#1C1C1E] rounded-xl text-white flex items-center justify-between focus:outline-none focus:ring-1 focus:ring-accent-green"
               onClick={() => {
-                // This would open a token selection modal in a real app
                 updateFormData({ paymentMethod: "ton" });
               }}
             >
@@ -232,19 +232,7 @@ export function CreateTaskStep2({
                 </div>
                 <span>TON</span>
               </div>
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
+              <ChevronDown className="text-gray-400" />
             </button>
           </div>
         </div>
@@ -266,7 +254,7 @@ export function CreateTaskStep2({
             }
             step="0.01"
             min="0"
-            className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#4945FF] pr-10 ${
+            className={`w-full p-3 bg-[#1C1C1E] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-accent-green pr-10 ${
               errors.pricePerClick ? "border border-red-500" : ""
             }`}
           />
@@ -313,7 +301,7 @@ export function CreateTaskStep2({
       <div className="flex flex-col space-y-3">
         <button
           onClick={handleContinue}
-          className="w-full py-4 bg-[#4945FF] text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
+          className="w-full py-4 bg-accent-green text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
         >
           Continue with {formData.paymentMethod.toUpperCase()}
         </button>
