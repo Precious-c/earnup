@@ -144,7 +144,7 @@ export interface TaskFormData {
 
   // Step 2
   numberOfClicks: number;
-  paymentMethod: "ton" | "usdt" | "seconds";
+  paymentMethod: "ton" | "usdt" | "muna";
   pricePerClick: number;
   totalPrice: number;
 
