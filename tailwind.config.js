@@ -1,5 +1,7 @@
 import colors from "@tailwindcss/colors";
-const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 
@@ -11,6 +13,7 @@ export default {
       fontFamily: {
         sans: ["Fixel Text", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        arial: ["Arial", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
