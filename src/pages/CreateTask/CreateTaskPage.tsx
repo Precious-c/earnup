@@ -7,7 +7,7 @@ import { CreateTaskStep2 } from "./components/CreateTaskStep2";
 import { CreateTaskStep3 } from "./components/CreateTaskStep3";
 import { ProgressSteps } from "./components/ProgressSteps";
 import type { TaskFormData } from "@/types";
-import { TaskHeader } from "./components/TaskHeader";
+// import { TaskHeader } from "./components/TaskHeader";
 import TaskCard from "../Earn/components/TaskCard";
 import tgIcon from "@/assets/icons/telegram.svg";
 import { ArrowRight, Dot } from "lucide-react";
@@ -65,7 +65,7 @@ export default function CreateTaskPage() {
 
   return (
     <div className="min-h-screen text-white pb-20">
-      <TaskHeader title="Create Task" />
+      {/* <TaskHeader title="Create Task" /> */}
 
       <main className=" pt-4">
         {currentStep > 0 && (
