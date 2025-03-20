@@ -168,7 +168,7 @@ export function CreateTaskStep3({
             <span className="text-gray-400">Geo targeting</span>
             <span className="text-white">
               {formData.geoTarget?.language
-                ? formData.geoTarget.language.toUpperCase()
+                ? formData.geoTarget.language
                 : "English"}
             </span>
           </div>
