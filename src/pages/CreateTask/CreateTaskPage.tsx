@@ -75,9 +75,9 @@ export default function CreateTaskPage() {
         {currentStep === 0 && (
           <div className="font-arial">
             <h2 className="font-semibold text-xl text-center mb-6">
-              Introducing Muna Wallet Parters Program
+              Introducing Muna Wallet Partners Program
             </h2>
-            <p className="text-center mb-6 tracking-wide">
+            <p className="text-center mb-6">
               Select the number of impressions or clicks you need, create your
               task, pay with Muna Points, USDT or TON
             </p>
