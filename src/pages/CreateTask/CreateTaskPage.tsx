@@ -73,7 +73,7 @@ export default function CreateTaskPage() {
         )}
 
         {currentStep === 0 && (
-          <div className="font-arial">
+          <div className="font-arial mt-6">
             <h2 className="font-semibold text-xl text-center mb-8">
               Introducing Muna Wallet Partners Program
             </h2>
