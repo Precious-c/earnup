@@ -8,9 +8,13 @@ import { CreateTaskStep3 } from "./components/CreateTaskStep3";
 import { ProgressSteps } from "./components/ProgressSteps";
 import type { TaskFormData } from "@/types";
 import { TaskHeader } from "./components/TaskHeader";
+import TaskCard from "../Earn/components/TaskCard";
+import tgIcon from "@/assets/icons/telegram.svg";
+import { ArrowRight, Dot } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function CreateTaskPage() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<TaskFormData>({
     description: "",
     link: "",
@@ -63,8 +67,61 @@ export default function CreateTaskPage() {
     <div className="min-h-screen text-white pb-20">
       <TaskHeader title="Create Task" />
 
-      <main className="px-4 pt-4">
-        <ProgressSteps currentStep={currentStep} totalSteps={3} />
+      <main className=" pt-4">
+        {currentStep > 0 && (
+          <ProgressSteps currentStep={currentStep} totalSteps={3} />
+        )}
+
+        {currentStep === 0 && (
+          <div className="">
+            <h2 className="font-semibold text-xl text-center mb-4">
+              Introducing Muna Wallet Parters Program
+            </h2>
+            <p className="text-center mb-4">
+              Select the number of impressions or clicks you need, create your
+              task, pay with Muna Points, USDT or TON
+            </p>
+
+            <div className="my-6">
+              <TaskCard
+                icon={tgIcon}
+                id="muna"
+                points={100000}
+                status="pending"
+                title="Subscribe to Muna Wallet"
+                index={0}
+              />
+            </div>
+
+            <ul className="flex flex-col gap-2ml-4 mb-4">
+              <li className="flex gap-1 items-center">
+                <Dot size={40} className="text-accent-green" />
+                27M Muna Wallet Users, 5M Daily Active Users
+              </li>
+              <li className="flex gap-1 items-center">
+                <Dot size={40} className="text-accent-green" />
+                Pay with Muna Points, USDT or TONs
+              </li>
+              <li className="flex gap-1 items-center ">
+                {/* <div className="flex"> */}
+                <Dot size={75} className="text-accent-green" />
+                {/* <p> */}
+                Geo-Targeting: Target your tasks by location in over 150
+                countries(Coming soon)
+                {/* </p> */}
+                {/* </div> */}
+              </li>
+            </ul>
+
+            <a href="#" className="my-6 w-full flex text-accent-green">
+              Read full rules here <ArrowRight />
+            </a>
+
+            <Button size="lg" className="w-full">
+              Publish own task
+            </Button>
+          </div>
+        )}
 
         {currentStep === 1 && (
           <CreateTaskStep1
