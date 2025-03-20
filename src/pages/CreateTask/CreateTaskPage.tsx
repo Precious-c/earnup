@@ -121,7 +121,7 @@ export default function CreateTaskPage() {
               Read full rules here <ArrowRight />
             </a>
 
-            <Button size="lg" className="w-full my-6">
+            <Button size="lg" className="w-full my-6 h-14 font-medium text-lg">
               Publish own task
             </Button>
           </div>
