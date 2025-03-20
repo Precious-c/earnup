@@ -74,7 +74,7 @@ export default function CreateTaskPage() {
 
         {currentStep === 0 && (
           <div className="font-arial">
-            <h2 className="font-semibold text-xl text-center mb-6">
+            <h2 className="font-semibold text-xl text-center mb-8">
               Introducing Muna Wallet Partners Program
             </h2>
             <p className="text-center mb-6">
@@ -82,7 +82,7 @@ export default function CreateTaskPage() {
               task, pay with Muna Points, USDT or TON
             </p>
 
-            <div className="my-6">
+            <div className="mt-4 mb-8">
               <TaskCard
                 icon={tgIcon}
                 id="muna"
@@ -93,7 +93,7 @@ export default function CreateTaskPage() {
               />
             </div>
 
-            <ul className="flex flex-col mb-6 list-disc">
+            <ul className="flex flex-col mb-4 list-disc">
               <li className="flex items-center ">
                 <div className="w-[10%]">
                   <Dot className="text-accent-green w-10 h-10 m-0 p-0" />
@@ -117,7 +117,7 @@ export default function CreateTaskPage() {
               </li>
             </ul>
 
-            <a href="#" className="my-6 w-full flex text-accent-green">
+            <a href="#" className="my-6 mb-8 w-full flex text-accent-green">
               Read full rules here <ArrowRight />
             </a>
 
