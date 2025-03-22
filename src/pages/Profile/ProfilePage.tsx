@@ -1,7 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import { ItemDrawer } from "./components/ItemDrawer";
 import { menuItems } from "@/data";
-import { ChevronRight, Icon, Settings } from "lucide-react";
+import { ChevronRight, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {

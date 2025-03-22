@@ -14,7 +14,6 @@ import bankIcon from "@/assets/icons/bank-48.png";
 import {
   BadgeCheck,
   ShieldEllipsis,
-  Flag,
   Star,
   FileText,
   MessageCircle,
