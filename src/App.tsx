@@ -14,6 +14,11 @@ import TaskDetailPage from "./pages/Task/TaskDetailPage";
 import { TopUpPage } from "./pages/TopUp/TopUpPage";
 import { WithdrawPage } from "./pages/Withdraw/WithdrawPage";
 import CreateTaskPage from "./pages/CreateTask/CreateTaskPage";
+import { SettingsPage } from "./pages/Settings/SettingsPage";
+import { ProfileSettingsPage } from "./pages/Settings/components/ProfileSettings";
+import { SecuritySettingsPage } from "./pages/Settings/components/SecuritySettings";
+import { NotificationSettingsPage } from "./pages/Settings/components/Notificationettings";
+import { LanguageSettingsPage } from "./pages/Settings/components/LanguageSettings";
 function App() {
   return (
     <Router>
@@ -28,6 +33,16 @@ function App() {
           <Route path="/top-up" element={<TopUpPage />} />
           <Route path="/withdraw" element={<WithdrawPage />} />
           <Route path="/tasks/create" element={<CreateTaskPage />} />
+
+          {/* Settings Routes */}
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/settings/profile" element={<ProfileSettingsPage />} />
+          <Route path="/settings/security" element={<SecuritySettingsPage />} />
+          <Route
+            path="/settings/notifications"
+            element={<NotificationSettingsPage />}
+          />
+          <Route path="/settings/language" element={<LanguageSettingsPage />} />
           <Route path="/" element={<Navigate to="/wallet" replace />} />
         </Routes>
         <BottomNavbar />
