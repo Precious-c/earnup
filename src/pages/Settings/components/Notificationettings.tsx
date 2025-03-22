@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  ArrowLeft,
-  Bell,
-  DollarSign,
-  Users,
-  Star,
-  MessageSquare,
-} from "lucide-react";
+import { Bell, DollarSign, Users, Star, MessageSquare } from "lucide-react";
 import SettingsHeader from "./SettingsHeader";
 
 interface NotificationSetting {

@@ -3,7 +3,6 @@
 import type React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  ArrowLeft,
   User,
   Lock,
   Wallet,
@@ -14,7 +13,6 @@ import {
 } from "lucide-react";
 import { SettingCard } from "./components/SettingCard";
 import SettingsHeader from "./components/SettingsHeader";
-// import { BottomNavbar } from "../components/BottomNavbar";
 
 export interface SettingItem {
   id: string;
@@ -108,8 +106,6 @@ export function SettingsPage() {
           <p>Muna Wallet v1.0.0</p>
         </div>
       </main>
-
-      {/* <BottomNavbar /> */}
     </div>
   );
 }
