@@ -1,7 +1,3 @@
-"use client";
-
-import type React from "react";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -12,6 +8,7 @@ import {
   Star,
   MessageSquare,
 } from "lucide-react";
+import SettingsHeader from "./SettingsHeader";
 
 interface NotificationSetting {
   id: string;
@@ -69,21 +66,11 @@ export function NotificationSettingsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-black">
-        <div className="flex items-center px-4 py-3">
-          <button
-            onClick={() => navigate("/settings")}
-            className="p-2 -ml-2 hover:bg-[#1C1C1E] rounded-full transition-colors"
-          >
-            <ArrowLeft className="w-6 h-6" />
-          </button>
-          <h1 className="text-xl font-medium ml-2">Notification Preferences</h1>
-        </div>
-      </div>
+      <SettingsHeader route={"settings"} title="Notification Preferences" />
 
-      <main className="px-4 pt-4 pb-20">
+      <main className="pt-4 pb-20">
         <div className="bg-[#1C1C1E] rounded-xl p-4 mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -110,7 +97,7 @@ export function NotificationSettingsPage() {
                 }}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-[#2C2C2E] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#4945FF]"></div>
+              <div className="w-11 h-6 bg-[#2C2C2E] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-green"></div>
             </label>
           </div>
         </div>
@@ -137,7 +124,7 @@ export function NotificationSettingsPage() {
                   onChange={() => toggleSetting(setting.id)}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-[#2C2C2E] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#4945FF]"></div>
+                <div className="w-11 h-6 bg-[#2C2C2E] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-green"></div>
               </label>
             </div>
           ))}
@@ -145,7 +132,7 @@ export function NotificationSettingsPage() {
 
         <button
           onClick={handleSave}
-          className="w-full py-4 bg-[#4945FF] text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
+          className="w-full py-4 bg-accent-green text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
         >
           Save Preferences
         </button>
