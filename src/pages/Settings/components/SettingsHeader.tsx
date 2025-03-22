@@ -12,7 +12,9 @@ const SettingsHeader = ({ route, title }: Props) => {
     <div className="sticky top-0 z-10  bg-opacity-95 backdrop-blur-sm">
       <div className="flex items-center py-3">
         <button
-          onClick={() => navigate(`/${route}`)}
+          onClick={() =>
+            typeof route === "string" ? navigate(`/${route}`) : navigate(route)
+          }
           className="p-2 -ml-2 hover:bg-[#1C1C1E] rounded-full transition-colors"
         >
           <ArrowLeft className="w-6 h-6" />

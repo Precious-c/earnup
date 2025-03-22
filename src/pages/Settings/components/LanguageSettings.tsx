@@ -1,8 +1,7 @@
-"use client";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import SettingsHeader from "./SettingsHeader";
 
 interface Language {
   code: string;
@@ -38,21 +37,11 @@ export function LanguageSettingsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-black">
-        <div className="flex items-center px-4 py-3">
-          <button
-            onClick={() => navigate("/settings")}
-            className="p-2 -ml-2 hover:bg-[#1C1C1E] rounded-full transition-colors"
-          >
-            <ArrowLeft className="w-6 h-6" />
-          </button>
-          <h1 className="text-xl font-medium ml-2">Language</h1>
-        </div>
-      </div>
+      <SettingsHeader route={"settings"} title="Language" />
 
-      <main className="px-4 pt-4 pb-20">
+      <main className="pt-4 pb-20">
         <div className="bg-[#1C1C1E] rounded-xl overflow-hidden mb-6">
           {languages.map((language, index) => (
             <button
@@ -71,7 +60,7 @@ export function LanguageSettingsPage() {
                 </span>
               </div>
               {selectedLanguage === language.code && (
-                <Check className="w-5 h-5 text-[#4945FF]" />
+                <Check className="w-5 h-5 text-accent-green" />
               )}
             </button>
           ))}
@@ -79,7 +68,7 @@ export function LanguageSettingsPage() {
 
         <button
           onClick={handleSave}
-          className="w-full py-4 bg-[#4945FF] text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
+          className="w-full py-4 bg-accent-green text-white font-medium rounded-xl hover:bg-opacity-90 transition-colors"
         >
           Save Language
         </button>

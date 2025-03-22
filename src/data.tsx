@@ -20,6 +20,7 @@ import {
   MessageCircle,
   ChevronRight,
   ExternalLink,
+  Settings,
 } from "lucide-react";
 
 import {
@@ -502,11 +503,11 @@ export const menuItems: MenuItem[] = [
     href: "/profile/payment",
   },
   {
-    id: "language",
-    icon: Flag,
-    label: "Language",
+    id: "settings",
+    icon: Settings,
+    label: "Settings",
     endIcon: ChevronRight,
-    href: "/profile/language",
+    href: "/settings",
   },
   {
     id: "documents",

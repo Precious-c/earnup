@@ -91,7 +91,7 @@ export function SettingsPage() {
       {/* Header */}
       <SettingsHeader title="Settings" route={-1} />
 
-      <main className=" pb-20">
+      <main className="py-4 pb-20">
         <div className="space-y-4">
           {settingItems.map((item) => (
             <SettingCard
